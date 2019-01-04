@@ -1,0 +1,6 @@
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\bin\Debug\Halcon.MVision.Core.dll
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\bin\Debug\Halcon.MVision.Core.pdb
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\obj\Debug\Halcon.MVision.Core.csprojAssemblyReference.cache
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\obj\Debug\Halcon.MVision.Core.csproj.CoreCompileInputs.cache
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\obj\Debug\Halcon.MVision.Core.dll
+C:\Users\hzq\Desktop\Halcon.MVision.Core\Halcon.MVision.Core\obj\Debug\Halcon.MVision.Core.pdb

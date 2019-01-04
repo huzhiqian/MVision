@@ -1,0 +1,2152 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cognex.VisionPro.Display.Controls</name>
+    </assembly>
+    <members>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayColormapForm">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplayColormapForm.#ctor">
+            <summary>
+            Internal use only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColormapForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplayColormapForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplayColormapForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayColormap">
+            <summary>
+            This control is used to setup, manipulate, and optionally load or save a colormap on a CogDisplay.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColormap.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplayColormap.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplayColormap.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException">
+            <summary>
+            The exception that is thrown when the zoom value goes out of its range.
+            The Zoom property must be between 2^-16 and 2^+16.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayZoomOutOfRangeException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayZoomOutOfRangeException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException.CogDisplayZoomOutOfRangeException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayZoomOutOfRangeException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayZoomOutOfRangeException.CogDisplayZoomOutOfRangeException(System.String, System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException">
+            <summary>
+            The exception that is thrown when the user tries to run live display with a slave acquisition FIFO.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoSlaveFifosException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoSlaveFifosException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException.CogDisplayNoSlaveFifosException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoSlaveFifosException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayNoSlaveFifosException.CogDisplayNoSlaveFifosException(System.String,System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException">
+            <summary>
+            The exception that is thrown when live display tries to share a fifo that is configured in auto trigger mode.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoAutoFifoSharingException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoAutoFifoSharingException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException.CogDisplayNoAutoFifoSharingException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayNoAutoFifoSharingException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayNoAutoFifoSharingException.CogDisplayNoAutoFifoSharingException(System.String,System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException">
+            <summary>
+            The exception that is thrown when a child graphic has a space name that is something other than '$'.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayInvalidChildSpaceException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayInvalidChildSpaceException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException.CogDisplayInvalidChildSpaceException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayInvalidChildSpaceException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayInvalidChildSpaceException.CogDisplayInvalidChildSpaceException(System.String,System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException">
+            <summary>
+            The exception that is thrown when an attempt was made to re-enter StartLiveDisplay or StopLiveDisplay, which these functions do not allow.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayStartStopNotReEntrantException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayStartStopNotReEntrantException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException.CogDisplayStartStopNotReEntrantException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayStartStopNotReEntrantException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayStartStopNotReEntrantException.CogDisplayStartStopNotReEntrantException(System.String,System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException">
+            <summary>
+            The exception that is thrown when the group name specified did not match any known group name.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayUnknownGroupNameException.xml" path="//member[@name=&quot;Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayUnknownGroupNameException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException.CogDisplayUnknownGroupNameException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayUnknownGroupNameException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayUnknownGroupNameException.CogDisplayUnknownGroupNameException(System.String,System.Exception)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayInvalidColormapException.#ctor(System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayInvalidColormapException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayInvalidColormapException.CogDisplayInvalidColormapException(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Exceptions.CogDisplayInvalidColormapException.#ctor(System.String,System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="msg">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception. If the innerException parameter is not a null reference, the current exception is raised in a catch block that handles the inner exception.</param>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Exceptions\CogDisplayInvalidColormapException.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Exceptions.CogDisplayInvalidColormapException.CogDisplayInvalidColormapException(System.String, System.Exception)&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogRenderEngineConstants">
+            <summary>
+            Enumeration for the rendering engine used by the control.
+            </summary>
+            <remarks/><example/><seealso/>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogRenderEngineConstants.CogRenderEngine">
+            <summary>
+            Uses Cognex Render Engine for drawing.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogRenderEngineConstants.CogGDIRenderEngine">
+            <summary>
+            Uses GDI Render Engine for drawing.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayMouseModeConstants">
+            <summary>
+            Enumeration for mouse behavior modes.
+            </summary>
+            <remarks>
+    	<para>
+    		Used in <see cref="P:Cognex.VisionPro.Display.CogDisplay.MouseMode"/> to select the mouse mode.
+    	</para>
+    </remarks>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseModeConstants.Pan">
+            <summary>
+            Specifies pan mode for the mouse. This mode is the easiest to pan images in.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseModeConstants.Pointer">
+            <summary>
+            Specifies pointer mode for the mouse. This mode is for manipulating interactive graphics.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseModeConstants.UserDefined">
+            <summary>
+            Specifies user mode for the mouse. This mode allows easiest user customization of mouse behavior.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseModeConstants.ZoomIn">
+            <summary>
+            Specifies zoom in mode for the mouse. This mode allows easy left-click zooming in.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseModeConstants.ZoomOut">
+            <summary>
+            Specifies zoom out mode for the mouse. This mode allows easy left-click zooming out.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants">
+            <summary>
+            Enumeration for mouse wheel behavior modes.
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplayMouseWheelModeConstants.xml" path="//member[@name=&quot;T:Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants&quot;]/*"/>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.None">
+            <summary>
+            The mouse wheel is inactive.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom1">
+            <summary>
+            Specifies standard Zoom mode for the mouse wheel.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayMouseWheelModeConstants.Zoom2">
+            <summary>
+            Specifies a more refined Zoom mode which is
+            better suited for use with MouseMode Pan.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayScalingMethodConstants">
+            <summary>
+            Enumeration used with <see cref="P:Cognex.VisionPro.Display.CogDisplay.ScalingMethod"/> to
+            specify the zooming method to use.
+            </summary>
+            <remarks>
+    	<para>Use <see cref="P:Cognex.VisionPro.Display.CogDisplay.ScalingMethod"/> to get or set the scaling method.</para>
+    </remarks>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayScalingMethodConstants.Continuous">
+            <summary>
+            Specifies continuous scaling.
+            The image is nearest neighbor sampled to scale to the exact value of the <see cref="P:Cognex.VisionPro.Display.CogDisplay.Zoom"/> property.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayScalingMethodConstants.ContinuousBilinear">
+            <summary>
+            Specifies continuous scaling.
+            Bilinear interpolation is used to scale to the exact value of the <see cref="P:Cognex.VisionPro.Display.CogDisplay.Zoom"/> property.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayScalingMethodConstants.Integer">
+            <summary>
+            Specifies integer scaling.
+            The image is scaled using the largest integer scale value smaller than the <see cref="P:Cognex.VisionPro.Display.CogDisplay.Zoom"/> property.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayContentBitmapConstants">
+            <summary>
+            Enumeration for specifying format of display content bitmap.
+            </summary>
+            <remarks>
+    	<para>Used in <see cref="M:Cognex.VisionPro.Display.CogDisplay.CreateContentBitmap(Cognex.VisionPro.Display.CogDisplayContentBitmapConstants,Cognex.VisionPro.CogRectangle,System.Int32)"/> to specify the part of a display image to render as a bitmap.
+    	</para>
+    </remarks>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayContentBitmapConstants.Custom">
+            <summary>
+            The content of the returned bitmap is determined by a passed content rectangle and bitmap size.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayContentBitmapConstants.Display">
+            <summary>
+            The returned bitmap contains exactly what is visible in the display. The image is scaled and panned as it currently appears in the display, and graphics annotations are clipped at the display boundaries.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayContentBitmapConstants.Image">
+            <summary>
+            The returned bitmap contains the full unscaled image with graphics annotations clipped at the image boundaries.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants">
+            <summary>
+            Enumeration for method of specifying pan anchor.
+            </summary>
+            <remarks>
+    	<para>
+    		Used in
+    			<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetScreenPanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)"/>,
+    			<see cref="M:Cognex.VisionPro.Display.CogDisplay.SetScreenPanAnchor(System.Double,System.Double,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants)"/>,
+    			<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetImagePanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)"/>, and
+    			<see cref="M:Cognex.VisionPro.Display.CogDisplay.SetImagePanAnchor(System.Double,System.Double,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants)"/>
+    		to get and set the pan anchors.
+    	</para>
+    
+    </remarks>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Absolute">
+            <summary>
+            Indicates that the specified pan anchor is in absolute screen or image coordinates.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Relative">
+            <summary>
+            Indicates that the specified pan anchor is relative to screen or image size.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayZOrderConstants">
+            <summary>
+            Enumeration for specifying z-order extents.
+            </summary>
+            <remarks>
+			<para>
+				Used in <see cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.FindItem(System.Object,Cognex.VisionPro.Display.DisplayZOrderConstants)"/> to specify the search direction.
+			</para>
+		</remarks>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Front">
+            <summary>
+            Specifies the front of the z-order.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Back">
+            <summary>
+            Specifies the back of the z-order.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants">
+            <summary>
+            Enumeration for predefined colormaps
+            </summary>
+            <!-- Failed to insert some or all of included XML --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplayColormapPredefinedConstants.xml" path="//member[@name=&quot;T:Cognex.VisionPro.Display.CogDisplayColormapPredefinedConstants&quot;]/*"/>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.None">
+            <summary>
+            Specifies no predefined colormap.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.Grey">
+            <summary>
+            Specifies a linear grey predefined colormap.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.Thermal">
+            <summary>
+            Specifies a thermal predefined colormap.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.Height">
+            <summary>
+            Specifies a height predefined colormap.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.CogDisplayColorMapPredefinedConstants.Custom">
+            <summary>
+            Specifies a user defined colormap.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogStaticGraphicsContainer">
+            <summary>
+            A container for the display's static graphics.
+            </summary>
+            <remarks>
+			<para>
+    		Any graphic object that implements
+    		<see cref="T:Cognex.VisionPro.ICogGraphic"/>
+    		 that you
+    		 <see cref="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Add(Cognex.VisionPro.ICogGraphic,System.String)"/>
+    		 to this container is displayed. 
+    		 </para>
+			<para>
+    		 	Graphics added to this collection are static. You cannot change their location, color, or other attributes once they are added to the display.
+    			Use <see cref="T:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer"/> for movable, dynamic, or interactive graphics.	 	
+    		</para>
+			<para>
+    			See <see cref="u:Display.Images.CodeWalkthrough.DisplayImage">Displaying an Image</see>,
+    			<see cref="u:Display.Images.CodeWalkthrough.AnnotateImage">Annotating an Image</see>, and
+    			<see cref="u:Display.Graphics.CodeWalkthrough.DrawGraphics">Drawing Graphics</see>
+    			to learn more about drawing images and graphics in a display control.
+    		</para>
+		</remarks>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.AddList(Cognex.VisionPro.CogGraphicCollection,System.String)">
+            <summary>
+            Adds a list of static graphics to the display.
+            </summary>
+            <param name="graphics">The list of static graphics to add to the display.</param>
+            <param name="groupName">The name of the graphics group to which to add all of the <paramref name="graphics"/>.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when any of the arguments are invalid.</exception>
+            <remarks>
+			<para>
+				Once added to the static graphics container, the graphics objects in the list cannot be changed.
+			</para>
+			<para>
+				The  location properties and
+					<see cref="P:Cognex.VisionPro.ICogGraphic.SelectedSpaceName"/>
+				of each graphic in the list 
+				determine where it is drawn.
+			</para>
+			<para>
+				If the display control cannot resolve a  graphic's selected space name
+				(as described in <see cref="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)"/>)
+				then the graphic is added without error to the
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.LostAndFound"/> collection until its space name is resolvable.
+			</para>
+			<para>
+				Set <paramref name="checkForDuplicates"/> to <b>false</b> for better performance.
+				However, if you add the same graphic to this container more than once, the behavior is undefined and errors may occur.
+			</para>
+		</remarks><example>
+			<!--
+' Create a circle and a text label
+Dim ccCircle As New CogCircle
+Dim cglText As New CogGraphicLabel
+
+ccCircle.CenterX = cdDisp.Image.Width / 2
+ccCircle.CenterY = cdDisp.Image.Height / 2
+ccCircle.Radius = cdDisp.Image.Width / 8
+
+cglText.Text = "Circle Text"
+cglText.Alignment = cogGraphicLabelAlignmentBaselineLeft
+cglText.X = ccCircle.CenterX + ccCircle.Radius
+cglText.Y = ccCircle.CenterY
+
+' Create a graphics list and add the two graphics
+Dim cgcGraphics As New CogGraphics
+
+cgcGraphics.Add ccCircle
+cgcGraphics.Add cglText
+
+' Add the list to the display
+cdDisp.StaticGraphics.AddList cgcGraphics
+
+
+			-->
+		</example>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Add(Cognex.VisionPro.ICogGraphic,System.String)">
+            <summary>
+            Adds a static graphic to the display.
+            </summary>
+            <param name="graphic">The static graphic to add to the display.</param>
+            <param name="groupName">The name of the graphics group to which to add <paramref name="graphic"/>.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when any of the arguments are invalid.</exception>
+            <remarks>
+			<para>
+				Once added to the static graphics container, the graphics object cannot be changed.
+			</para>
+			<para>
+				The graphic object's location properties and its
+					<see cref="P:Cognex.VisionPro.ICogGraphic.SelectedSpaceName"/>
+				determine where the graphic is drawn.
+			</para>
+			<para>
+				If the display control cannot resolve the graphic's selected space name
+				(as described in <see cref="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)"/>)
+				then the graphic is added without error to the
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.LostAndFound"/> collection until its space name is resolvable.
+			</para>
+			<para>
+				Set <paramref name="checkForDuplicates"/> to <b>false</b> for better performance.
+				However, if you add the same graphic to this container more than once, the behavior is undefined and errors may occur.
+			</para>
+		</remarks><example>
+			<!--
+' Add a circle graphic to the display (cdDisp)
+Dim ccCircle As New CogCircle
+
+ccCircle.CenterX = cdDisp.Image.Width / 2
+ccCircle.CenterY = cdDisp.Image.Height / 2
+ccCircle.Radius = cdDisp.Image.Width / 8
+
+' Anchor the graphic to the image's features
+ccCircle.SelectedSpaceName = "@"
+
+cdDisp.StaticGraphics.Add ccCircle
+			-->
+		</example>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.MoveToFront(System.String)">
+            <summary>
+            Moves the specified group to the front of the z-order.
+            </summary>
+            <param name="groupName">The named group to move to the front of the z-order.
+            </param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.MoveToBack(System.String)">
+            <summary>
+            Moves the specified group to the back of the z-order.
+            </summary>
+            <param name="groupName">The named group to move to the back of the z-order.
+            </param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.MoveForward(System.String)">
+            <summary>
+            Moves the specified group one group closer to the front of the z-order.
+            </summary>
+            <param name="groupName">The named group to move one group closer to the front of the z-order.
+            </param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.MoveBackward(System.String)">
+            <summary>
+            Moves the specified group one step closer to the back of the z-order.
+            </summary>
+            <param name="groupName">The named group to move to the back of the z-order.
+            </param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Clear">
+            <summary>
+            Removes all static graphics from the display.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogStaticGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Clear&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Remove(System.String)">
+            <summary>
+            Removes all of the graphics in the specified group from the display.
+            </summary>
+            <param name="groupName">The name of the graphics group to remove from the display.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogStaticGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Remove(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogStaticGraphicsContainer.Dispose">
+            <summary>
+            Dispose the control.
+            </summary>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogStaticGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Dispose&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups">
+            <summary>
+            Returns the z-order of the groups in this display.
+            </summary>
+            <value>The z-order for the groups in this display. The first string in the collection is the name of the group drawn first.
+            </value>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when it fails to retrieve the return value--CogStringCollection.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogStaticGraphicsContainer.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogStaticGraphicsContainer.ZOrderGroups&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer">
+            <summary>
+            Object that contains user's interactive graphics.
+            </summary>
+            <remarks>
+			<para>
+    		Any graphic object that implements
+    		<see cref="T:Cognex.VisionPro.ICogGraphicInteractive"/>
+    		 that you
+    		 <see cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Add(Cognex.VisionPro.ICogGraphicInteractive,System.String,System.Boolean)"/>
+    		 to this container is displayed. 
+    		 </para>
+			<para>
+    		 	Graphics that you add to this collection can be changed, moved, and manipulated interactively after being added to the display.
+    		 	If you add a graphic to this collection, then change its location or color, the graphic is updated immediately on the display
+    		</para>
+			<para>
+    			See <see cref="u:Display.Images.CodeWalkthrough.DisplayImage">Displaying an Image</see>,
+    			<see cref="u:Display.Images.CodeWalkthrough.AnnotateImage">Annotating an Image</see>, and
+    			<see cref="u:Display.Graphics.CodeWalkthrough.DrawGraphics">Drawing Graphics</see>
+    			to learn more about drawing images and graphics in a display control.
+    		</para>
+		</remarks>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.AddList(Cognex.VisionPro.CogGraphicInteractiveCollection,System.String,System.Boolean)">
+            <summary>
+            Adds a list of interactive graphics to the display.
+            </summary>
+            <param name="graphics">The list of interactive graphics to add to the display.</param>
+            <param name="groupName">The name of the graphics group to which to add all of the <paramref name="graphics"/>.</param>
+            <param name="checkForDuplicates">If <b>true</b> checks whether <paramref name="graphics"/> is
+            	already in the display container.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when any of the arguments are invalid.</exception>
+            <remarks>
+			<para>
+				The  location properties and
+					<see cref="P:Cognex.VisionPro.ICogGraphic.SelectedSpaceName"/>
+				of each graphic in the list 
+				determine where it is drawn.
+			</para>
+			<para>
+				If the display control cannot resolve a  graphic's selected space name
+				(as described in <see cref="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)"/>)
+				then the graphic is added without error to the
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.LostAndFound"/> collection until its space name is resolvable.
+			</para>
+			<para>
+				Set <paramref name="checkForDuplicates"/> to <b>false</b> for better performance.
+				However, if you add the same graphic to this container more than once, the behavior is undefined and errors may occur.
+			</para>
+		</remarks><example>
+			<!--
+' Create a bouncing circle and a text label
+
+
+Dim ccCircle As New CogCircle
+Dim cglText As New CogGraphicLabel
+
+ccCircle.CenterX = cdDisp.Image.Width / 2
+ccCircle.CenterY = cdDisp.Image.Height / 2
+cglText.Text = "Circle Text"
+cglText.Alignment = cogGraphicLabelAlignmentBaselineLeft
+
+' Create an interactive graphics collection and add the items
+Dim cgcGraphics As New CogGraphicInteractiveColl
+
+cgcGraphics.Add ccCircle
+cgcGraphics.Add cglText
+cdDisp.InteractiveGraphics.AddList cgcGraphics
+
+' Make them move
+Dim i As Integer
+For i = 1 To 5000
+    ccCircle.Radius = ccCircle.Radius + 1
+    If ccCircle.Radius > cdDisp.Image.Height / 2 Then ccCircle.Radius = 1
+    cglText.X = ccCircle.CenterX + ccCircle.Radius
+    cglText.Y = ccCircle.CenterY
+Next i
+
+
+cdDisp.InteractiveGraphics.Clear
+	-->
+		</example><seealso cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Add(Cognex.VisionPro.ICogGraphicInteractive,System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Add(Cognex.VisionPro.ICogGraphicInteractive,System.String,System.Boolean)">
+            <summary>
+            Adds an interactive graphic to the display.
+            </summary>
+            <param name="graphic">The interactive graphic to add to the display.</param>
+            <param name="groupName">The name of the graphics group to which to add <paramref name="graphic"/>.</param>
+            <param name="checkForDuplicates">If <b>true</b> checks whether <paramref name="graphic"/> is
+            	already in the display container.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when any of the arguments are invalid.</exception>
+            <remarks>
+			<para>
+				The graphic object's location properties and its
+					<see cref="P:Cognex.VisionPro.ICogGraphic.SelectedSpaceName"/>
+				determine where the graphic is drawn.
+			</para>
+			<para>
+				If the display control cannot resolve the graphic's selected space name
+				(as described in <see cref="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)"/>)
+				then the graphic is added without error to the
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.LostAndFound"/> collection until its space name is resolvable.
+			</para>
+			<para>
+				Set <paramref name="checkForDuplicates"/> to <b>false</b> for better performance.
+				However, if you add the same graphic to this container more than once, the behavior is undefined and errors may occur.
+			</para>
+		</remarks><example>
+			<!--
+			' Display a dynamically resizing circle graphic in a display control (cdDisp)
+Dim i As Integer 
+Dim ccCircle As New CogCircle
+
+ccCircle.CenterX = cdDisp.Image.Width / 2
+ccCircle.CenterY = cdDisp.Image.Height / 2
+
+cdDisp.InteractiveGraphics.Add ccCircle
+
+' Make it move
+For i = 1 To 5000
+    ccCircle.Radius = ccCircle.Radius + 1
+    If ccCircle.Radius > cdDisp.Image.Height / 2 Then ccCircle.Radius = 1
+Next i
+
+			-->
+		</example><seealso cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.AddList(Cognex.VisionPro.CogGraphicInteractiveCollection,System.String,System.Boolean)"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.GetEnumerator">
+            <summary>
+            Returns an enumerator that can iterate through the interactive graphics collection.
+            </summary>
+            <returns>An enumerator that can be used to iterate through the collection.</returns>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.GetEnumerator&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.MoveToFront(System.String)">
+            <summary>
+            Moves the specified group to the front of the z-order.
+            </summary>
+            <param name="groupName">The name of the group to move to the front of the z-order.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.MoveToBack(System.String)">
+            <summary>
+            Moves the specified group to the back of the z-order.
+            </summary>
+            <param name="groupName">The name of the group to move to the back of the z-order.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.MoveForward(System.String)">
+            <summary>
+            Moves the specified group one group closer to the front of the z-order.
+            </summary>
+            <param name="groupName">The name of the group to move one group closer to the front of the z-order.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.MoveBackward(System.String)">
+            <summary>
+            Moves the specified group one step closer to the back of the z-order.
+            </summary>
+            <param name="groupName">The name of the group to move to the back of the z-order.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Clear">
+            <summary>
+            Removes all interactive graphics from the display.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Clear&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Remove(System.String)">
+            <summary>
+            Removes all of the graphics in the specified group from the display.
+            </summary>
+            <param name="GroupName">The name of the graphics group to remove from the display.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an illegal name of the group is used.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Remove(System.String)&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Remove(System.Int32)">
+            <summary>
+            Removes the interactive graphic at specified index from the display
+            </summary>
+            <param name="Index">The index of the item to remove.</param>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an invalid index is used.</exception>
+            <seealso cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.FindItem(System.Object,Cognex.VisionPro.Display.CogDisplayZOrderConstants)"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.FindItem(System.Object,Cognex.VisionPro.Display.CogDisplayZOrderConstants)">
+            <summary>
+            Finds the first matching item and returns its index.
+            </summary>
+            <param name="objectOrGroupName">The item to find or the name of a graphics group.</param>
+            <param name="searchOrigin">When <paramref name="searchOrigin"/> is 
+            	<see cref="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Front"/>,
+            	the search starts at the front of the z-order.
+            	When <paramref name="searchOrigin"/>
+            	is <see cref="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Back"/>,
+            	the search starts at the end of the z-order.
+            </param>
+            <returns>The index of the matching item, or -1 if no item was found.</returns>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when any of the arguments are invalid.</exception>
+            <remarks>
+			<para>
+				If <paramref name="objectOrGroupName"/> is a group name, 
+				<see cref="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.FindItem(System.Object,Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.DisplayZOrderConstants)"/>
+				returns the first item in the group when <paramref name="searchOrigin"/> is
+				<see cref="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Front"/> and
+				the last item in the group when <paramref name="searchOrigin"/> is
+				<see cref="F:Cognex.VisionPro.Display.CogDisplayZOrderConstants.Back"/>.
+			</para>
+		</remarks><example>
+			<!--
+' Add two interactive graphics
+Dim ccCircle As New CogCircle
+Dim crRect As New CogRectangle
+
+' Add each graphic to its own named group
+cdDisp.InteractiveGraphics.Add ccCircle, "Circle Group"
+cdDisp.InteractiveGraphics.Add crRect, "Rectangle Group"
+
+' Retrieve the indexes by group name (place in text box txtGroupNames)
+txtGroupNames.Text =  "Circle Group: " & cdDisp.InteractiveGraphics.FindItem("Circle Group") _
+    & " Rectangle Group: " & cdDisp.InteractiveGraphics.FindItem("Rectangle Group")
+
+' Retrieve the indexes by object (place in text box txtObjects)
+txtObjects.Text =  "ccCircle: " & cdDisp.InteractiveGraphics.FindItem(ccCircle) _
+    & "  crRect: " & cdDisp.InteractiveGraphics.FindItem(crRect)
+
+
+			-->
+		</example>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Dispose">
+            <summary>
+            Dispose of the control.
+            </summary>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Dispose&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Count">
+            <summary>
+            Returns the number of items in the collection.
+            </summary>
+            <value>The number of items in the collection.</value>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when it fails to retrieve the return value.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Count&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Item(System.Int32)">
+            <summary>
+            Returns the item with the specified 0-based index.
+            </summary>
+            <param name="index">The zero-based index of the item to get.</param>
+            <value>The specified item.</value>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when an invalid index is used.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.Item(System.Int32)&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups">
+            <summary>
+            Returns the z-order of the groups in this display.
+            </summary>
+            <value>The z-order for the groups in this display. The first string in the collection is the name of the group drawn first.
+            </value>
+            <exception cref="T:System.ObjectDisposedException"> Thrown when the object is already disposed.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when it fails to retrieve the return value--CogStringCollection.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogInteractiveGraphicsContainer.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogInteractiveGraphicsContainer.ZOrderGroups&quot;]/*"/>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.CogDisplay">
+            <summary>
+            The display object that shows an image and static and interactive graphics.
+            </summary>
+            <remarks>
+			<para>
+    			    The Cognex Display control is an ActiveX control which displays images and graphics.
+    			    You display images by setting the 
+    			    	<See cref="P:Cognex.VisionPro.Display.CogDisplay.Image"/> property to be the image you want to display.
+    			    You display graphics by adding graphic objects to the 
+    			    <see cref="P:Cognex.VisionPro.Display.CogDisplay.StaticGraphics"/>
+    			    or 
+    			    <see cref="P:Cognex.VisionPro.Display.CogDisplay.InteractiveGraphics"/>
+    			    collections in a display.
+    		</para>
+			<para>
+    			See <see cref="u:Display.Images.CodeWalkthrough.DisplayImage">Displaying an Image</see>,
+    			<see cref="u:Display.Images.CodeWalkthrough.AnnotateImage">Annotating an Image</see>, and
+    			<see cref="u:Display.Graphics.CodeWalkthrough.DrawGraphics">Drawing Graphics</see>
+    			to learn more about drawing images and graphics in a display control.
+    		</para>
+		</remarks>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.#ctor">
+            <summary>
+            Constructor
+            </summary>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogDisplay.#ctor&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.InitializeContextMenuStrip">
+            CR55371 was implemented using the .NET ContextMenuStrip and hiding the old OCX's ContextMenu
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetImage16GreyColorMap(System.Collections.ArrayList)">
+            <summary>
+            Sets a colormap for 16-bit greyscale image display.  The size of the colormap being set must match the type of 16-bit image being currently displayed (either 10, 12, 14, or 16-bit image) otherwise an exception is thrown.  In order to change colormap sizes, remove any image being displayed.
+            </summary>
+            <value>An ArrayList containing 256, 1024, 4096, 16384, or 65536 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogDisplayInvalidColormapException"> Thrown when an invalid colormap is specified.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.Image16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap">
+            <summary>
+            Returns the colormap for 16-bit greyscale image display.  If the user has not set a colormap for 16-bit greyscale images, then null is returned.
+            </summary>
+            <value>An ArrayList containing 256, 1024, 4096, 16384, or 65536 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ClearImage16GreyColorMap">
+            <summary>
+            Clears the 16-bit greyscale colormap that has been set.  This method does nothing if no 16-bit greyscale colormap has been set.
+            </summary>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetImage16RangeColorMap(System.Collections.ArrayList)">
+            <summary>
+            Sets a colormap for 16-bit range image display.  The size of the colormap being set must match the type of 16-bit image being currently displayed (either 10, 12, 14, or 16-bit image) otherwise an exception is thrown.  In order to change colormap sizes, remove any image being displayed.
+            </summary>
+            <value>An ArrayList containing 256, 1024, 4096, 16384, or 65536 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogDisplayInvalidColormapException"> Thrown when an invalid colormap is specified.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.Image16RangeColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetImage16RangeColorMap">
+            <summary>
+            Returns the colormap for 16-bit range image display.  If the user has not set a colormap for 16-bit range images, then null is returned.
+            </summary>
+            <value>An ArrayList containing 256, 1024, 4096, 16384, or 65536 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16RangeColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ClearImage16RangeColorMap">
+            <summary>
+            Clears the 16-bit range colormap that has been set.  This method does nothing if no 16-bit range colormap has been set.
+            </summary>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16RangeColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetColorMapRoiLimits(System.Double,System.Double)">
+            <summary>
+            Sets the lower and upper limit of the colormap's range of interest expressed as a floating point number where 0.0 represents pixel value zero and 1.0 represents the max pixel value (which depends on the displayed image). 
+            </summary>
+            <param name="lowerLimit">The lower limit.  Valid values for this param is in the range of 0.0 to 1.0.</param>
+            <param name="upperLimit">The upper limit.  Valid values for this param is in the range of 0.0 to 1.0.</param>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if lower or upper limits are less than 0.0 or more than 1.0.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if the lower limit is greater than the upper limit. </exception>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.SetColorMapRoiLimits&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetColorMapClipColors(System.Drawing.Color,System.Drawing.Color)">
+            <summary>
+            Sets the lower and upper clip colors of the colormap range of interest.  
+            </summary>
+            <param name="lowerColor">The lower clip color.</param>
+            <param name="upperColor">The upper clip color.</param>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.SetColorMapClipColors&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ColorMapLoad(System.String)">
+            <summary>
+            Loads and sets a colormap from the specified file.  This method can only be called if an image is being displayed.
+            </summary>
+            <param name="filename">Filename of the file that contains the colormap</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown if no image is being displayed.</exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown if a non 8-bit or 16-bit image is being displayed.</exception>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the colormap is loaded.</event>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ColorMapSave(System.String)">
+            <summary>
+            Saves the currently set colormap to the specified file.  This method can only be called if an image is being displayed.
+            </summary>
+            <param name="filename">Filename of the file that will contain the currently set colormap</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown if no image is being displayed.</exception>
+            <exception cref="T:System.InvalidOperationException"> Thrown if a non 8-bit or non 16-bit image is being displayed.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ColorMapToString">
+            <summary>
+            Internal use only
+            </summary>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ColorMapFromString(System.String)">
+            <summary>
+            Internal use only
+            </summary>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.CreateContentBitmap(Cognex.VisionPro.Display.CogDisplayContentBitmapConstants,Cognex.VisionPro.CogRectangle,System.Int32)">
+            <summary>
+            Returns the current content of the display (image and graphics) as a bitmap in a picture object.
+            </summary>
+            <param name="content">The type of content bitmap to create.</param>
+            <param name="contentRect">The rectangle within the display to return as a bitmap.</param>
+            <param name="bitmapSize">The maximum dimension for the requested bitmap.</param>
+            <returns>The returned bitmap.</returns>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when one of the followings happen: BitmapSize is less than 0, if return bitmap cannot be allocated, or CogSpaceTree errors if passed content rect cannot be mapped to pixel(#) space.</exception>
+            <remarks>
+			<para>The <paramref name="content"/> parameter specifies how the bitmap is created.</para>
+			<para>If you use  <see cref="F:Cognex.VisionPro.Display.CogDisplayContentBitmapConstants.Custom"/> as the <paramref name="content"/> parameter
+		the <paramref name="contentRect"/> and <paramref name="bitmapSize"/> parameters specify which portion of the displayed image is used to create the bitmap.
+		If <paramref name="bitmapSize"/> is zero, the returned bitmap is the unscaled portion of the image that <paramref name="contentRect"/> describes. If <paramref name="bitmapSize"/>
+		is not zero, it is used as the largest dimension of the resulting bitmap, and the bitmap has the same aspect ratio as <paramref name="contentRect"/>.</para>
+			<para>If <paramref name="contentRect"/> is <see langword="null"/> and <paramref name="bitmapSize"/> is zero, the returned bitmap is the unscaled contents
+		of the display.
+		</para>
+		</remarks>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetImage8GreyColorMap(System.Byte)">
+            <summary>
+            Returns the OLE_COLOR that is mapped to a grey scale pixel value.
+            </summary>
+            <param name="greyValue">The grey pixel value.</param>
+            <returns>The OLE_COLOR mapped to the grey value.</returns>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when the passed color is not a valid OLE_COLOR</exception>
+            <seealso cref="M:Cognex.VisionPro.Display.CogDisplay.SetImage8GreyColorMap(System.Byte,Cognex.VisionPro.CogColorConstants)"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetImage8GreyColorMap">
+            <summary>
+            Returns the colormap for 8-bit greyscale image display.  
+            </summary>
+            <value>An ArrayList containing 256 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.GetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetImage8GreyColorMap(System.Byte,Cognex.VisionPro.CogColorConstants)">
+            <summary>
+            Maps a grey scale pixel value to an OLE_COLOR.
+            </summary>
+            <param name="greyValue">The grey pixel value to map for display.</param>
+            <param name="pColor">An OLE_COLOR to display instead of the grey pixel value.</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when the passed color is not a valid OLE_COLOR</exception>
+            <remarks>
+			<para>All pixels in the image whose grey scale value is <paramref name="greyValue"/>
+		are displayed with the color <paramref name="pColor"/>.
+		</para>
+		</remarks><example>
+			<code lang="C#">
+private void AcquireButton_Click(object sender, System.EventArgs e)
+{
+    int trignum;
+    
+    // Display pixel values below 50 in dark red
+    for (byte i = 0; i &lt; 50; i++)
+        cogDisplay1.SetImage8GreyColorMap(i, CogColorConstants.DarkRed);
+
+    cogDisplay1.Image = mAcqFifo.Acquire(out trignum);
+    cogDisplay1.Fit(true);
+
+    numAcqs++;
+    if (numAcqs &gt; 4) {
+        GC.Collect();
+        numAcqs = 0;
+    }
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub AcquireButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcquireButton.Click
+    Dim trignum As Integer
+    Dim i as Integer
+
+    ' Display pixel values below 50 in dark red
+    For i = 0 To 50
+        cogDisplay1.SetImage8GreyColorMap(i, CogColorConstants.DarkRed)
+    Next
+
+    cogDisplay1.Image = mAcqFifo.Acquire(trignum)
+    cogDisplay1.Fit(True)
+    numAcqs += 1
+
+    If numAcqs &gt; 4 Then
+        GC.Collect()
+        numAcqs = 0
+    End If
+End Sub
+</code>
+		</example><seealso cref="M:Cognex.VisionPro.Display.CogDisplay.GetImage8GreyColorMap(System.Byte)"/>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetImage8GreyColorMap(System.Collections.ArrayList)">
+            <summary>
+            Sets a colormap for 8-bit greyscale image display.  The size of the colormap must be 256.
+            </summary>
+            <value>An ArrayList containing 256 System.Drawing.Color values.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:Cognex.VisionPro.Exception.CogDisplayInvalidColormapException"> Thrown when an invalid colormap is specified.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.SetImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.ClearImage8GreyColorMap">
+            <summary>
+            Clears the 8-bit greyscale colormap that has been set.
+            </summary>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ClearImage16GreyColorMap&quot;]/*"/>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)">
+            <summary>
+            Returns the transform from <paramref name="fromSpace"/> to <paramref name="toSpace"/>.
+            </summary>
+            <param name="toSpace">The destination space.</param>
+            <param name="fromSpace">The source space.</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+				<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetTransform(System.String,System.String)"/>
+				lets you transform locations between the display's coordinate spaces and screen coordinates (which have the special name "*").
+			</para>
+
+			<para>
+			The values that you specify for 
+				<paramref name="fromSpace"/> and <paramref name="toSpace"/>
+			must be one of the following: 
+			</para>
+			
+			<list type="bullet">
+				<item>
+					<description>"*"</description>
+				</item>
+				<item>
+					<description>"#"</description>
+				</item>
+				<item>
+					<description>a named space in <see cref="P:Cognex.VisionPro.Display.CogDisplay.UserPixelTree"/> or <see cref="P:Cognex.VisionPro.Display.CogDisplay.UserDisplayTree"/></description>
+				</item>
+				<item>
+					<description>a named space in the image being displayed (including "." and "@")</description>
+				</item>
+			</list>
+		</remarks><example>
+			<code lang="C#">
+private void btnDraw_Click(object sender, System.EventArgs e) {
+    CogTransform2DLinear xform;
+    CogRectangle aRect;
+    CogPointMarker cross = new CogPointMarker();
+    double dispX, dispY;
+    int	rectIX;
+
+	// Draw a crosshair marker in the center of a rectangle whose coordinate space is "<see cref="u:Framework.Coordinates.CodeWalkthrough.Cartesian">Cartesian</see>",
+	// but anchor it to the display coordinates ("*") so it does not move when you scroll
+
+    xform = cogDisplay1.GetTransform("*", "Cartesian") as CogTransform2DLinear;
+			
+	// Find the interactive rectangle in the graphics group "rect"
+    rectIX = cogDisplay1.InteractiveGraphics.FindItem("rect", Cognex.VisionPro.Display.CogDisplayZOrderConstants.Front);
+    aRect = cogDisplay1.InteractiveGraphics[rectIX] as CogRectangle;
+
+	// Map the point
+    xform.MapPoint(aRect.CenterX, aRect.CenterY, out dispX, out dispY);
+
+	// Draw the cross
+    cross.GraphicType = Cognex.VisionPro.CogPointMarkerGraphicTypeConstants.Cross;
+    cross.SizeInScreenPixels = 35;
+    cross.X = dispX;
+    cross.Y = dispY;
+    cross.SelectedSpaceName = "*";
+    cogDisplay1.StaticGraphics.Add(cross, "cross");
+}
+			</code>
+		</example>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.QueryRenderCaps(System.String)">
+            <summary>
+            Queries the rendering engine for any special capabilities it might have.
+            </summary>
+            <param name="renderCapability">Queries for an interface that will allow them to tweak new features or disable them if they don't like them.</param>
+            <returns>An interface to the new rendering engine capability. Returns null if the engine does not support the new capability.</returns>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;M:Cognex.VisionPro.Display.CogDisplay.QueryRenderCaps(System.String)&quot;]/*"/>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetImagePanAnchor(System.Double,System.Double,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants)">
+            <summary>
+            Sets the image pan anchor position.
+            </summary>
+            <param name="x">The x-coordinate of the pan anchor.</param>
+            <param name="y">The y-coordinate of the pan anchor.</param>
+            <param name="method">How the pan distance is computed.</param>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the image pan anchor point changes.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+			The image pan anchor is the center of the display control's display
+			area for the purposes of image panning.
+			When you specify a value for
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+			or 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/>
+			you are specifying a distance between the image pan anchor point and the screen pan anchor point.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Relative"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are in the range
+			0.0 to 1.0. The point (0,0) is the top left of the display and
+			the point (1,1) is the bottom right of the display.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Absolute"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are absolute coordinate values.
+		</para>
+		</remarks>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetImagePanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">
+            <summary>
+            Returns the image pan anchor position. 
+            </summary>
+            <param name="x">The x-coordinate of the pan anchor.</param>
+            <param name="y">The y-coordinate of the pan anchor.</param>
+            <param name="method">How the pan distance is computed. </param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+			The image pan anchor is the center of the display control's display
+			area for the purposes of image panning.
+			When you specify a value for
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+			or 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/>
+			you are specifying a distance between the image pan anchor point and the screen pan anchor point.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Relative"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are in the range
+			0.0 to 1.0. The point (0,0) is the top left of the display and
+			the point (1,1) is the bottom right of the display.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Absolute"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are absolute coordinate values.
+		</para>
+		</remarks>
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.SetScreenPanAnchor(System.Double,System.Double,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants)">
+            <summary>
+            Sets the screen pan anchor position. 
+            </summary>
+            <param name="x">The x-coordinate of the pan anchor.</param>
+            <param name="y">The y-coordinate of the pan anchor.</param>
+            <param name="method">How the pan distance is computed. </param>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the screen pan anchor point changes.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+			The image pan anchor is the center of the display control's display
+			area for the purposes of image panning.
+			When you specify a value for
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+			or 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/>
+			you are specifying a distance between the image pan anchor point and the screen pan anchor point.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Relative"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are in the range
+			0.0 to 1.0. The point (0,0) is the top left of the display and
+			the point (1,1) is the bottom right of the display.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Absolute"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are absolute coordinate values.
+		</para>
+		</remarks>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.GetScreenPanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">
+            <summary>
+            Returns the screen pan anchor position.
+            </summary>
+            <param name="x">The x-coordinate of the pan anchor.</param>
+            <param name="y">The y-coordinate of the pan anchor.</param>
+            <param name="method">How the pan distance is computed. </param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+			The image pan anchor is the center of the display control's display
+			area for the purposes of image panning.
+			When you specify a value for
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+			or 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/>
+			you are specifying a distance between the image pan anchor point and the screen pan anchor point.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Relative"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are in the range
+			0.0 to 1.0. The point (0,0) is the top left of the display and
+			the point (1,1) is the bottom right of the display.
+		</para>
+			<para>
+			When <paramref name="method"/> is
+			<see cref="F:Cognex.VisionPro.Display.CogDisplayPanAnchorConstants.Absolute"/>,
+			the values of 
+			<paramref name="x"/> and <paramref name="y"/> are absolute coordinate values.
+		</para>
+		</remarks>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.StopLiveDisplay">
+            <summary>
+            Stops live image display.
+            </summary>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+		If the display is not currently displaying live video, this function has no effect.
+		</para>
+		</remarks>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.StartLiveDisplay(System.Object,System.Boolean)">
+            <summary>
+            Starts live image display using the specified acquisition FIFO.
+            </summary>
+            <param name="acqFifo">The image source. Must implement <see cref="T:Cognex.VisionPro.ICogAcqFifo"/>.</param>
+            <param name="own">If <b>true</b>, this method optimizes display performance,
+            but there are some resitrctions on how you can  use the FIFO.</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+			If <paramref name="own"/> is <b>true</b>,
+			<see cref="M:Cognex.VisionPro.Display.CogDisplay.StartLiveDisplay(System.Object,System.Boolean)"/>
+			optimizes display performance,
+			but you should not attempt to use <paramref name="acqFifo"/>
+			to acquire images while live video is running.
+		</para>
+			<para>
+			If <paramref name="acqFifo"/>'s
+			<see cref="P:Cognex.VisionPro.ICogAcqTrigger.TriggerModel"/>
+			is
+			<see cref="F:Cognex.VisionPro.CogAcqTriggerModelConstants.Auto"/>,
+			<paramref name="own"/> must be <b>true</b>.
+		</para>
+			<para>
+			See
+			<see cref="u:Acquisition.General.CodeWalkthrough.AcquireFromLive">Acquiring from a Live Display</see>
+			to learn how to acquire images while displaying live video.
+		</para>
+		</remarks><example>
+			<code lang="C#">
+using Cognex.VisionPro;
+
+private CogFrameGrabbers myFrameGrabbers;
+private ICogFrameGrabber myFrameGrabber;
+private ICogAcqFifo myAcqFifo;
+
+private void AcquireDisplay () {
+	const string VIDEO_FORMAT = "Sony XC75 640x480";
+	int	tNum;
+
+	myFrameGrabbers = new CogFrameGrabbers();
+	myFrameGrabber = myFrameGrabbers[0];
+	myAcqFifo = myFrameGrabber.CreateAcqFifo(VIDEO_FORMAT, Cognex.VisionPro.CogAcqFifoPixelFormatConstants.Format8Grey, 0, false);
+
+	cogDisplay1.StartLiveDisplay(myAcqFifo, false);
+}
+</code>
+			<code lang="Visual Basic">
+Imports Cognex.VisionPro
+
+Private myFrameGrabbers As CogFrameGrabbers
+Private myFrameGrabber As Cognex.VisionPro.ICogFrameGrabber
+Private myAcqFifo As Cognex.VisionPro.ICogAcqFifo
+
+Private Sub AcquireDisplay()
+    Const VIDEO_FORMAT = "Sony XC75 640x480"
+    Dim tNum As Integer
+
+    myFrameGrabbers = New CogFrameGrabbers
+    myFrameGrabber = myFrameGrabbers.Item(0)
+    myAcqFifo = myFrameGrabber.CreateAcqFifo(VIDEO_FORMAT, CogAcqFifoPixelFormatConstants.Format8Grey, 0, False)
+
+	cogDisplay1.StartLiveDisplay(myAcqFifo, False);
+End Sub
+</code>
+		</example>    
+        </member>
+        <member name="M:Cognex.VisionPro.Display.CogDisplay.Fit(System.Boolean)">
+            <summary>
+            Uses the current 
+            <see cref="P:Cognex.VisionPro.Display.CogDisplay.ScalingMethod"/>
+            to find the largest zoom value that allows  the entire image to be visible in the display.
+            </summary>
+            <param name="graphicsToo">If true, the image is scaled and panned so that all graphics are visible too. This parameter is ignored if there are no graphics or if the graphics all lie within the bounds of the image.</param>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+				<see cref="M:Cognex.VisionPro.Display.CogDisplay.Fit(System.Boolean)"/>
+			sets the scale and pan values so that the entire image is visible in the display.
+			If there are graphics outside the area of the image and
+			<paramref name="graphicsToo"/> is <b>true</b>,
+			the image is scaled and panned so that the image and graphics are visible.    
+		</para>
+		</remarks><example>
+			<code lang="C#">
+private void AcquireButton_Click(object sender, System.EventArgs e)
+{
+    int trignum;
+    
+    cogDisplay1.Image = mAcqFifo.Acquire(out trignum);
+    cogDisplay1.Fit(true);
+
+    numAcqs++;
+    if (numAcqs &gt; 4) {
+        GC.Collect();
+        numAcqs = 0;
+    }
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub AcquireButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcquireButton.Click
+    Dim trignum As Integer
+
+    cogDisplay1.Image = mAcqFifo.Acquire(trignum)
+    cogDisplay1.Fit(True)
+    numAcqs += 1
+
+    If numAcqs &gt; 4 Then
+        GC.Collect()
+        numAcqs = 0
+    End If
+End Sub
+</code>
+		</example>    
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.BackColor">
+            <summary>
+            Gets or sets the background color of the display.
+            </summary>
+            <value>The background color.</value>
+            <remarks>
+			<para>The background color appears between the borders of the image and the borders of the display control window.
+    		If there is no image in the window, this color completely fills the window.
+    		</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ColorMapPredefined">
+            <summary>
+            Gets or sets the predefined colormap on this display object.
+            </summary>
+            <value>The predefined colormap.  Default is CogDisplayColormapPredefinedConstants.None</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ColormapPredefined&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ColorMapLowerRoiLimit">
+            <summary>
+            Gets or sets the lower limit of the colormap's range of interest expressed as a floating point number where 0.0 represents pixel value zero and 1.0 represents the max pixel value (which depends on the displayed image). 
+            </summary>
+            <value>The lower limit.  Default value is 0.0.  Valid values for this property are in the range of 0.0 to 1.0.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if value is less than 0.0 or more than 1.0. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if value is greater than ColorMapUpperRoiLimit. </exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ColorMapLowerRoiLimit&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ColorMapUpperRoiLimit">
+            <summary>
+            Gets or sets the upper limit of the colormap's range of interest expressed as a floating point number where 0.0 represents pixel value zero and 1.0 represents the max pixel value (which depends on the displayed image). 
+            </summary>
+            <value>The upper limit.  Default value is 1.0.  Valid values for this property are in the range of 0.0 to 1.0.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if value is less than 0.0 or more than 1.0. </exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if value is less than ColorMapLowerRoiLimit. </exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ColorMapUpperRoiLimit&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ColorMapLowerClipColor">
+            <summary>
+            Gets or sets the lower clip color of the colormap.  This property is only valid if an image is being displayed and ColorMapPredefined is not None or Custom.
+            </summary>
+            <value>The lower clip color.  Default is Color.Black.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ColormapLowerClipColor&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ColorMapUpperClipColor">
+            <summary>
+            Gets or sets the upper clip color of the colormap.  This property is only valid if an image is being displayed and ColorMapPredefined is not None or Custom.
+            </summary>
+            <value>The upper clip color.  Default is Color.Black.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.ColormapUpperClipColor&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.Image">
+            <summary>
+            Gets or sets the image currently in the display.
+            </summary>
+            <value>The image in the display.</value>
+            <remarks>When displaying images of different types and a colormap is set, you may have to call one of the colormap properties with a new value in order to update the internal colormap.</remarks>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when an image is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>To display an image, set this property to the image to display.</para>
+			<para>Setting this property to <see langword="null"/> causes the display to release its current image
+		reference and to fill the display window with
+		the <see cref="P:Cognex.VisionPro.Display.CogDisplay.BackColor">background color</see>.
+		</para>
+		</remarks><example>
+			<code lang="C#">
+private void AcquireButton_Click(object sender, System.EventArgs e)
+{
+    int trignum;
+    
+    cogDisplay1.Image = mAcqFifo.Acquire(out trignum);
+    cogDisplay1.Fit(true);
+
+    numAcqs++;
+    if (numAcqs &gt; 4) {
+        GC.Collect();
+        numAcqs = 0;
+    }
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub AcquireButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcquireButton.Click
+    Dim trignum As Integer
+
+    cogDisplay1.Image = mAcqFifo.Acquire(trignum)
+    cogDisplay1.Fit(True)
+    numAcqs += 1
+
+    If numAcqs &gt; 4 Then
+        GC.Collect()
+        numAcqs = 0
+    End If
+End Sub
+</code>
+		</example>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.HorizontalScrollBar">
+            <summary>
+            Gets or sets whether the horizontal scroll bar is visible.
+            </summary>
+            <value>True if the horizontal scroll bar is visible.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>If scroll bars are not visible, the user may still be able to pan the image using the pan
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.MouseMode">mouse mode</see>.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.VerticalScrollBar"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.VerticalScrollBar">
+            <summary>
+            Gets or sets whether the vertical scroll bar is visible.
+            </summary>
+            <value>True if the vertical scroll bar is visible.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>If scroll bars are not visible, the user may still be able to pan the image using the pan
+				<see cref="P:Cognex.VisionPro.Display.CogDisplay.MouseMode">mouse mode</see>.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.HorizontalScrollBar"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PopupMenu">
+            <summary>
+            Gets or sets whether the user can right-click to bring up a pop-up menu that controls the behavior of the display.
+            </summary>
+            <value>True if the user can right-click to bring up the pop-up menu.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The user can use the pop-up menu, shown below, to change the mouse mode, turn
+		grid lines on and off, fit the image, and reset the Zoom to 1.0
+		</para>
+			<PICTURE SRC="menu.jpg" apiSRC="PopupMenu_menu.jpg"/>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanX">
+            <summary>
+            Gets or sets the x-position of the image in the display.
+            </summary>
+            <value>The x-position of the image in the display.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+		value is the distance, in image coordinates, between the
+		<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetImagePanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">image pan anchor</see>
+		and the
+		<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetScreenPanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">screen pan anchor</see>.
+		A positive value means that the image anchor point is to the right of the screen anchor;
+		a negative value means that it is to the left.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanXMax"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanXMin"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanY">
+            <summary>
+            Gets or sets the y-position of image in the display.
+            </summary>
+            <value>The y-position of image in the display.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+		value is the distance, in image coordinates, between the
+		<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetImagePanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">image pan anchor</see>
+		and the
+		<see cref="M:Cognex.VisionPro.Display.CogDisplay.GetScreenPanAnchor(System.Double@,System.Double@,Cognex.VisionPro.Display.CogDisplayPanAnchorConstants@)">screen pan anchor</see>.
+		A positive value means that the image anchor point is below the screen anchor;
+		a negative value means that it is above.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanYMax"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanYMin"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.Zoom">
+            <summary>
+            Gets or sets the scale value used to display the image and graphics.
+            </summary>
+            <value>The scale value used to display the image and graphics.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The actual scale value used depends on the <see cref="P:Cognex.VisionPro.Display.CogDisplay.ScalingMethod"/>  property, which may truncate the value to the nearest smaller integer
+		</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.ScalingMethod">
+            <summary>
+            Gets or sets the scaling method the display control uses when zooming.
+            </summary>
+            <value>The scaling method.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>Images can be scaled by integer factors or by floating point factors. Integer factors are often faster.</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.DrawingEnabled">
+            <summary>
+            Gets or sets whether drawing takes place.
+            </summary>
+            <value>True if drawing takes place.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>When this property is <b>true</b> (the default), then all methods and properties
+		that would change the appearance of a display are rendered immediately.</para>
+			<para>If you are constructing a complex graphic display using many individual graphic
+		objects, you can improve performance by disabling drawing, adding all the graphics,
+		then enabling drawing. When you
+		re-enable drawing, all rendering is performed.</para>
+			<para>Note that setting this property 
+		to <b>false</b> also disables any updates to the display of the image, so changes to 
+		pan or zoom values will not appear until after drawing is re-enabled</para>
+		</remarks><example>
+			<code lang="C#">
+private void doDraw() {
+    CogCircle mCircle = new CogCircle();
+    CogRectangle mRect = new CogRectangle();
+
+    cogDisplay1.DrawingEnabled = false;
+
+    cogDisplay1.InteractiveGraphics.Add(mCircle, "Circle", false);
+    cogDisplay1.InteractiveGraphics.Add(mRect, "Rect", false);
+		
+    mCircle.CenterX = cogDisplay1.Image.Width / 2;
+    mCircle.CenterY = cogDisplay1.Image.Height / 2;
+    mCircle.Radius = cogDisplay1.Image.Height / 4;
+    mRect.SetCenterWidthHeight(mCircle.CenterX, mCircle.CenterY, cogDisplay1.Image.Width / 2, cogDisplay1.Image.Height /2);
+
+    cogDisplay1.DrawingEnabled = true;
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub doDraw()
+    Dim mCircle As New CogCircle
+    Dim mRect As New CogRectangle
+
+    cogDisplay1.DrawingEnabled = False
+    cogDisplay1.InteractiveGraphics.Add(mCircle, "Circle", False)
+    cogDisplay1.InteractiveGraphics.Add(mRect, "Rect", False)
+
+    mCircle.CenterX = cogDisplay1.Image.Width / 2
+    mCircle.CenterY = cogDisplay1.Image.Height / 2
+    mCircle.Radius = cogDisplay1.Image.Height / 4
+    mRect.SetCenterWidthHeight(mCircle.CenterX, mCircle.CenterY, cogDisplay1.Image.Width / 2, cogDisplay1.Image.Height / 2)
+
+    cogDisplay1.DrawingEnabled = True
+End Sub
+</code>
+		</example>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.MouseMode">
+            <summary>
+            Gets or sets the behavior of the display control in response to mouse input.
+            </summary>
+            <value>The mouse mode behavior.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The display has four different mouse behavior modes:</para>
+			<list type="bullet">
+				<item>
+					<description>Pointer</description>
+				</item>
+				<item>
+					<description>Pan</description>
+				</item>
+				<item>
+					<description>ZoomIn</description>
+				</item>
+				<item>
+					<description>ZoomOut</description>
+				</item>
+			</list>
+		</remarks><seealso cref="M:Cognex.VisionPro.Display.CogDisplay.GetMouseCursor(Cognex.VisionPro.Display.CogDisplayMouseCursorConstants)"/><seealso cref="M:Cognex.VisionPro.Display.CogDisplay.SetMouseCursor(Cognex.VisionPro.Display.CogDisplayMouseCursorConstants,System.Windows.Forms.Cursor)"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.MouseWheelMode">
+            <summary>
+            Gets or sets the behavior of the display control in response to mouse wheel input.
+            </summary>
+            <value>The mouse wheel mode behavior.  Default is CogDisplayMouseWheelModeConstants.Zoom1</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.MouseWheelMode&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.MouseWheelSensitivity">
+            <summary>
+            Gets or sets the sensitivity of the mouse wheel when zooming in the display.
+            </summary>
+            <value>The mouse wheel sensititivity, default value is 1.0.  The mouse wheel sensitivity cannot be 
+            less than 0.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"> Thrown if value is less than 0 </exception>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the property value is changed.</event>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.MouseWheelSensitivity&quot;]/*"/>
+            <remarks>Useful mouse wheel sensitivity values will likely be in the range 0.5 to 1.5.  Setting the mouse wheel
+            sensitivity 0 will effectivly disable zooming via the mouse wheel.  Setting mouse wheel sensitivity
+            to a value that is too high may also disable zooming via the mouse wheel.
+            <para>MouseWheelSensitivity is ignored if MouseWheelMode is None</para></remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.LiveDisplayRunning">
+            <summary>
+            Returns true if live image display is active.
+            </summary>
+            <value>True if live image display is active.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.LiveDisplayRunning&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanXMin">
+            <summary>
+            Returns the minimum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/> value.
+            </summary>
+            <value>The minimum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/> value.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires whenever the value is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.PanXMin&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanXMax">
+            <summary>
+            Returns the maximum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/> value.
+            </summary>
+            <value>The maximum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanX"/> value.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires whenever the value is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.PanXMax&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanYMin">
+            <summary>
+            Returns the minimum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/> value.
+            </summary>
+            <value>The minimum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/> value.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires whenever the value is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.PanYMin&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.PanYMax">
+            <summary>
+            Returns the maximum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/> value.
+            </summary>
+            <value>The maximum <see cref="P:Cognex.VisionPro.Display.CogDisplay.PanY"/> value.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires whenever the value is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.PanYMax&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.RenderEngine">
+            <summary>
+            Gets or sets the rendering engine used to draw the contents of the display.
+            </summary>
+            <value>The rendering engine.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the value is changed</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.RenderEngine&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.UserDisplayTree">
+            <summary>
+            Returns a coordinate space tree containing coordinate spaces associated with this display control.
+            </summary>
+            <value>The coordinate space tree.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The root space for this tree is the screen pixels used
+		by this display control, with the origin in the upper-left corner,
+		the positive x-axis extending to the right, and the positive y-axis extending down.
+		You can use this coordinate space tree to make it easier to create display annotations that are
+		independent of the image being displayed in the control and independent of any
+		display zoom or pan.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.UserPixelTree"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.UserPixelTree">
+            <summary>
+            Returns a coordinate space tree containing coordinate spaces associated with this display control.
+            </summary>
+            <value>The coordinate space tree.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The root space for this tree is the screen pixels used
+		by this display control, with the origin in the upper-left corner,
+		the positive x-axis extending to the right, and the positive y-axis extending down.
+		You can use this coordinate space tree to make it easier to create display annotations that
+		are independent of the image being displayed in the control.
+		Unlike the <see cref="P:Cognex.VisionPro.Display.CogDisplay.UserDisplayTree"/>
+		space, this space reflects the effect of any pan and zoom settings for the display.
+		</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.GridEnabled">
+            <summary>
+            Gets or sets whether the pixel grid is visible.
+            </summary>
+            <value>True if the pixel grid is visible.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The pixel grid is visible when 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.Zoom"/> is greater than or equal to 64.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.GridColor"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridEnabled"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.GridColor">
+            <summary>
+            Gets or sets the color of the pixel grid lines.
+            </summary>
+            <value>The color of the pixel grid lines.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogDisplay.GridEnabled"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridColor"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridEnabled">
+            <summary>
+            Gets or sets whether the sub-pixel grid is visible.
+            </summary>
+            <value>True if the sub-pixel grid is visible.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The sub-pixel grid is visible when 
+			<see cref="P:Cognex.VisionPro.Display.CogDisplay.Zoom"/> is greater than or equal to 128.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.GridEnabled"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridColor"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridColor">
+            <summary>
+            Gets or sets the color of the sub-pixel grid lines.
+            </summary>
+            <value>The color of the sub-pixel grid lines.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <seealso cref="P:Cognex.VisionPro.Display.CogDisplay.SubPixelGridEnabled"/><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.GridColor"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.StaticGraphics">
+            <summary>
+            Gets the static graphics container that contains the static graphics in this display.
+            </summary>
+            <value>The static graphics container.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+    		You can add graphics to this collection to display them.
+    	</para>
+		</remarks><example>
+			<code lang="C#">
+private void doDraw() {
+    CogCircle mCircle = new CogCircle();
+    		
+    mCircle.CenterX = 100;
+    mCircle.CenterY = 100;
+    mCircle.Radius = 75;
+
+    cogDisplay1.InteractiveGraphics.Add(mCircle, "Circle");
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub doDraw()
+    Dim mCircle As New CogCircle
+
+    mCircle.CenterX = 100
+    mCircle.CenterY = 100
+    mCircle.Radius = 75
+
+    cogDisplay1.StaticGraphics.Add(mCircle, "Circle")
+End Sub
+</code>
+		</example><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.InteractiveGraphics"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.InteractiveGraphics">
+            <summary>
+            Gets the interactive graphics container that contains the interactive graphics in this display.
+            </summary>
+            <value>The interactive graphics container.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>
+    		You can add interactive graphics to this collection to display them.
+    	</para>
+		</remarks><example>
+			<code lang="C#">
+private void doDraw() {
+    CogCircle mCircle = new CogCircle();
+
+		
+    mCircle.CenterX = 100;
+    mCircle.CenterY = 100;
+    mCircle.Radius = 75;
+    mCircle.Interactive = true;
+    mCircle.GraphicDOFEnable = CogCircleDOFConstants.All;
+
+    cogDisplay1.InteractiveGraphics.Add(mCircle, "Circle", false);
+}
+</code>
+			<code lang="Visual Basic">
+Private Sub doDraw()
+    Dim mCircle As New CogCircle
+
+    mCircle.CenterX = 100
+    mCircle.CenterY = 100
+    mCircle.Radius = 75
+    mCircle.Interactive = True
+    mCircle.GraphicDOFEnable = CogCircleDOFConstants.All
+
+    cogDisplay1.InteractiveGraphics.Add(mCircle, "Circle", False)
+End Sub
+</code>
+		</example><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.StaticGraphics"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.TouchDistance">
+            <summary>
+            Gets or sets the touch distance in pixels. 
+            </summary>
+            <value>The touch distance.</value>
+            <exception cref="T:Cognex.VisionPro.Exception.CogException"> Thrown when the value is less than 1.</exception>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The touch distance is the minimum number of pixels within which the mouse
+		must be from an interactive graphic to be considered touching the graphic.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.AttentionGraphic"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.InteractiveGraphicTipsEnabled">
+            <summary>
+            Gets or sets whether tool tips are displayed when the mouse is held over an interactive graphic.
+            </summary>
+            <value>True if tool tips are displayed when the mouse is held over an interactive graphic.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>Use the graphic's <see cref="P:Cognex.VisionPro.ICogGraphicInteractive.TipText"/>
+		property to set its tool tip text.
+		</para>
+		</remarks><seealso cref="P:Cognex.VisionPro.Display.CogDisplay.AttentionGraphic"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.MultiSelectionEnabled">
+            <summary>
+            Gets or sets whether the user can select more than one interactive shape in the display.
+            </summary>
+            <value>True if multiple selection is enabled.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>If enabled, the user may select more than one shape by holding down the Control key while selecting.</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.LostAndFound">
+            <summary>
+            Gets the graphics that could not be rendered in the display.
+            </summary>
+            <value>The graphics that could not be rendered in the display.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The interactive and static graphics in the lost-and-found
+		list are those whose space name could not be resolved
+		by the display control.
+		</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.Selection">
+            <summary>
+            Returns the collection of currently selected interactive shapes in the display.
+            </summary>
+            <value>The collection of selected interactive shapes.</value>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.Selection&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.AttentionGraphic">
+            <summary>
+            Returns the interactive graphic the mouse is currently over.
+            </summary>
+            <value>The interactive graphic or <see langword="null"/> if the mouse is not over an
+            <see cref="P:Cognex.VisionPro.ICogGraphicInteractive.Interactive"/> graphic.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the selection is made.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>The mouse is considered over interactive graphic if it is within <see cref="P:Cognex.VisionPro.Display.CogDisplay.TouchDistance"/> pixels of the graphic.</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.Enabled">
+            <summary>
+            Gets or sets whether the display is enabled.
+            </summary>
+            <value>True if the display is enabled.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <remarks>
+			<para>When the display control is disabled, it does not respond to mouse events.
+		</para>
+		</remarks>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.AutoFit">
+            <summary>
+            Gets or sets whether the image is resized  to fit whenever the size of the control changes.
+            </summary>
+            <value>True if the image is resized when the control size changes.</value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.AutoFit&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.UserDefinedMouseCursor">
+            <summary>
+            Gets or sets the cursor that will be displayed whenever the MouseMode
+            property is set to 'UserDefined'.
+            </summary>
+            <value>
+            The user-defined mouse cursor or <see langword="null"/>.  If null,
+            a standard arrow cursor will be displayed in UserDefined mode.
+            </value>
+            <event cref="E:Cognex.VisionPro.Display.CogDisplay.Changed">Fires when the value is changed.</event>
+            <exception cref="T:System.Windows.Forms.AxHost.InvalidActiveXStateException"> Thrown when the display control is invalid.</exception>
+            <!-- No matching elements were found for the following include tag --><include file="k:\docvob\vx\nsrc\ProgrammingReference\src\netstore\Display\CogDisplay.xml" path="//member[@name=&quot;P:Cognex.VisionPro.Display.CogDisplay.UserDefinedMouseCursor&quot;]/*"/>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.VisiblePixelMaskEnable">
+            <summary>
+            Whether the visible pixel mask is displayed to the user or not.
+            </summary>
+        </member>
+        <member name="P:Cognex.VisionPro.Display.CogDisplay.VisiblePixelMaskColor">
+            <summary>
+            The fill color of the visible pixel mask.
+            </summary>
+        </member>
+        <member name="T:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding">
+            <summary>
+            Internal Use only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.None">
+            <summary>
+            None. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Unknown">
+            <summary>
+            Unknown. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey8">
+            <summary>
+            Grey8. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey16_8bit">
+            <summary>
+            Grey16_8bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey16_10bit">
+            <summary>
+            Grey16_10bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey16_12bit">
+            <summary>
+            Grey16_12bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey16_14bit">
+            <summary>
+            Grey16_14bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Grey16_16bit">
+            <summary>
+            Grey16_16bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Range16_8bit">
+            <summary>
+            Range16_8bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Range16_10bit">
+            <summary>
+            Range16_10bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Range16_12bit">
+            <summary>
+            Range16_12bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Range16_14bit">
+            <summary>
+            Range16_14bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Range16_16bit">
+            <summary>
+            Range16_16bit. Internal Use Only.
+            </summary>
+        </member>
+        <member name="F:Cognex.VisionPro.Display.Implementation.Internal.CogImageTypeEncoding.Color24Planar">
+            <summary>
+            Color24Planar. Internal Use Only.
+            </summary>
+        </member>
+    </members>
+</doc>

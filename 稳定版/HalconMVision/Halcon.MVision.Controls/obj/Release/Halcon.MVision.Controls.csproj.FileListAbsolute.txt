@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\bin\Release\Halcon.MVision.Controls.dll
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\bin\Release\Halcon.MVision.Controls.pdb
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.dll
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.pdb
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.Properties.Resources.resources
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\bin\Release\Halcon.MVision.dll
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\bin\Release\Halcon.MVision.pdb
+C:\Users\Administrator\Desktop\HalconMVision\Halcon.MVision.Controls\obj\Release\Halcon.MVision.Controls.csproj.CopyComplete

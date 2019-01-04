@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EB879B28-782D-4C3D-8F5E-A21525C95B4D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Halcon.MVision.Core</RootNamespace>
+    <AssemblyName>Halcon.MVision.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Halcon.MVision">
+      <HintPath>..\Halcon.MVision\bin\Release\Halcon.MVision.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet">
+      <HintPath>D:\MVTec\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HalSerializationOptionsConstants.cs" />
+    <Compile Include="HalSerializer.cs" />
+    <Compile Include="IHalAcqBrightness.cs" />
+    <Compile Include="IHalAcqContrast.cs" />
+    <Compile Include="IHalAcqExposure.cs" />
+    <Compile Include="IHalAcqFifo.cs" />
+    <Compile Include="IHalAcqImageProperty.cs" />
+    <Compile Include="IHalAcqOpenInfo.cs" />
+    <Compile Include="IHalAcqState.cs" />
+    <Compile Include="IHalAcqTrigger.cs" />
+    <Compile Include="IHalGigEAccess.cs" />
+    <Compile Include="Implementation.Internal\CAcqOperatorBase.cs" />
+    <Compile Include="Implementation.Internal\CHalGigEAccess.cs" />
+    <Compile Include="Implementation.Internal\HalAcqBrightness.cs" />
+    <Compile Include="Implementation.Internal\HalAcqContrast.cs" />
+    <Compile Include="Implementation.Internal\HalAcqExposure.cs" />
+    <Compile Include="Implementation.Internal\HalAcqImageProperty.cs" />
+    <Compile Include="Implementation.Internal\HalAcqState.cs" />
+    <Compile Include="Implementation.Internal\HalAcqTrigger.cs" />
+    <Compile Include="Implementation.Internal\IAcqOperatorBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,739 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        "Cognex.VisionPro.CorePlus"
+    </assembly>
+    <members>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Clone(System.IntPtr@)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.InitForDisplay(System.IntPtr,System.IntPtr,System.IntPtr)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetPel(System.Int32,System.Int32,System.Boolean@,System.Int32@)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetSelectedSpaceName3D(System.String)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetSelectedSpaceName3D">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetPixelFromRoot3D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetPixelFromRoot3D(System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetRootFromSensor3D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetRootFromSensor3D(System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetRoots(System.IntPtr,System.IntPtr)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetRoots(System.IntPtr@,System.IntPtr@)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropPixelFromRootTransform">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropCoordinateSpaceTree">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropSelectedSpaceName">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropWidth">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropHeight">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.InteropAllocated">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.InteropGetTransform(System.String,System.String)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.InteropCopyBase(Cognex.VisionPro.Interop.CogImageCopyModeConstants)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.InteropAllocate(System.Int32,System.Int32)">
+            <summary>
+For Cognex internal use only.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+Serialization constructor for CogImage16Range object.
+</summary>
+            <param name="Info">
+The standard SerializationInfo argument.
+</param>
+            <param name="Ctxt">
+The standard StreamingContext argument.
+</param>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.SelectedSpaceName3D">
+            <summary>
+Gets or sets the name of the three dimensional
+coordinate space to be used by tools which process this image.
+Currently the only meaningful values are: "Sensor3D",
+"@" (also known as 
+<see cref="u:Framework.Coordinates.Theory.CoordSpaceNames">
+root space</see>), and "#" (also known
+as <see cref="u:Framework.Coordinates.Theory.CoordSpaceNames">
+pixel space</see>).
+</summary>
+            <event cref="E:Cognex.VisionPro.ICogChangedEvent.Changed">
+Fires when this property changes.
+</event>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.PixelFromRootTransform3D">
+            <summary>
+Get or set the transform that maps from
+three dimensional root space to pixel space.
+</summary>
+            <exception cref="T:System.ArgumentNullException">
+If NewVal is null.
+</exception>
+            <event cref="E:Cognex.VisionPro.ICogChangedEvent.Changed">
+Fires when this property changes.
+</event>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.PixelFromRootTransform">
+            <summary>
+Gets a copy of the transform that maps from
+pixel space ("#") to two dimensional root space
+("@"). Due to the unique nature of the CogImage16Range,
+setting PixelFromRootTransform is not allowed. Attempts to set
+PixelFromRootTransform will cause an InvalidOperationException
+to be thrown.
+</summary>
+            <exception cref="T:System.InvalidOperationException">
+If you attempt to set this property.
+</exception>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.CoordinateSpaceTree">
+            <summary>
+Get or set the tree of all named two dimensional
+coordinate spaces for this image. The tree provides advanced
+functions for managing two dimensional coordinate spaces.
+</summary>
+            <exception cref="T:System.ArgumentNullException">
+If NewVal is null.
+</exception>
+            <event cref="E:Cognex.VisionPro.ICogChangedEvent.Changed">
+Fires when this property changes.
+</event>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.SelectedSpaceName">
+            <summary>
+Get or set the name of the two dimensional coordinate
+space to be used by tools that process this image.
+</summary>
+            <event cref="E:Cognex.VisionPro.ICogChangedEvent.Changed">
+Fires when this property changes.
+</event>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.Width">
+            <summary>
+The number of columns of pixels in this image.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.Height">
+            <summary>
+The number of rows of pixels in this image.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16Range.Allocated">
+            <summary>
+Whether there is pixel data associated with this image.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetMaskData">
+            <summary>
+Returns a CogImage8Grey that represents the mask
+data of this image. This data is commonly referred
+to as the "visible pixel mask" and is provided
+as an indication of which pixel values were
+visible to the camera during acquisition. Any
+range image pixel that was not visible has an undefined
+pixel value. The visible pixel mask represents
+a visible pixel at a given row and column
+with an 8 bit grey value of 255,
+and a non-visible pixel with an 8 bit grey value
+of zero. The CogImage8Root and the two
+dimensional coordinate space tree of this
+CogImage8Grey visible pixel mask representation
+are shared with this range image.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetPixelData">
+            <summary>
+Returns a CogImage16Grey that represents the range or
+height data of this image. The root and two dimensional coordinate
+space tree are shared with this range image.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.MapPoint3DFrom2D(System.String,System.String,Cognex.VisionPro3D.Cog3DVect2,System.Boolean@,Cognex.VisionPro3D.Cog3DVect3@)">
+            <summary>
+Maps the supplied two dimensional point into the
+specified three dimensional space. This is
+accomplished by first mapping the input two
+dimensional point to pixel space. If the
+range image's visible pixel mask indicates
+that this pixel was not visible, then the
+Visible output argument is set to false and
+no further processing is performed. Otherwise,
+the pixel value is read and the resulting
+coordinate space triple is mapped from
+pixel space into the requested three
+dimensional space.
+</summary>
+            <param name="DstPoint3DSpaceName">
+The destination three dimensional space name.
+</param>
+            <param name="SrcPoint2DSpaceName">
+The source two dimensional space name.
+</param>
+            <param name="SrcPoint2D">
+The source two dimensional point.
+</param>
+            <param name="Visible">
+True if the source two dimensional point was visible.
+</param>
+            <param name="DstPoint3D">
+The resulting mapped three dimensional point. This will
+be 0,0,0 if Visible is false.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If DstPoint3DSpaceName is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If SrcPoint2DSpaceName is null.
+</exception>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageNoPixelsException">
+If Allocated is false.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.MapPoint2DFrom3D(System.String,System.String,Cognex.VisionPro3D.Cog3DVect3,Cognex.VisionPro3D.Cog3DVect2@)">
+            <summary>
+Maps the supplied three dimensional point into the
+specified two dimensional space. This is accomplished
+by first mapping the input three dimensional point to
+root space. The X and Y coodinates of this root space
+point are then mapped to the specified two dimensional
+space to produce the output two dimensional point.
+</summary>
+            <param name="DstPoint2DSpaceName">
+The destination two dimensionalspace name.
+</param>
+            <param name="SrcPoint3DSpaceName">
+The source three dimensional space name.
+</param>
+            <param name="SrcPoint3D">
+The source three dimensional point.
+</param>
+            <param name="DstPoint2D">
+The resulting mapped two dimensional point.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If DstPoint2DSpaceName is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If SrcPoint3DSpaceName is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetTransform3D(System.String,System.String)">
+            <summary>
+Returns a transform that maps three dimensional points
+from the 'From' space to the 'To' space.
+The special string "." is accepted as an alias
+for the SelectedSpaceName3D of this image.
+</summary>
+            <param name="ToSpaceName">
+The name of the three dimensional coordinate
+space to transform the point to. The special string "." is
+accepted as an alias for the SelectedSpaceName3D of this image.
+</param>
+            <param name="FromSpaceName">
+The name of the three dimensional coordinate
+space to transform the point from. The special string "." is
+accepted as an alias for the SelectedSpaceName3D of this image.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If ToSpaceName is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If FromSpaceName is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.ScaleImage(System.Int32,System.Int32)">
+            <summary>
+Creates a scaled version of this image. The dimensions
+of the returned image (in pixels) are specified by the DesiredWidth
+and DesiredHeight arguments. The scaling is performed using bilinear
+interpolation.
+</summary>
+            <param name="DesiredWidth">
+The width in pixels of the desired output image.
+</param>
+            <param name="DesiredHeight">
+ The height in pixels of the desired output image.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.ToBitmap">
+            <summary>
+Creates a 24-bit RGB Windows bitmap from this image.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetTransform(System.String,System.String)">
+            <summary>
+Returns a transform that maps two dimensional points
+from the 'From' space to the 'To' space.
+The special string "." is accepted as an alias
+for the SelectedSpaceName of this image.
+</summary>
+            <param name="ToSpaceName">
+The name of the two dimensional coordinate
+space to transform the point to. The special string "." is
+accepted as an alias for the SelectedSpaceName of this image.
+</param>
+            <param name="FromSpaceName">
+The name of the two dimensional coordinate
+space to transform the point from. The special string "." is
+accepted as an alias for the SelectedSpaceName of this image.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If ToSpaceName is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If FromSpaceName is null.
+</exception>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageNoTreeException">
+If CoordinateSpaceTree is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetPixel(System.Int32,System.Int32,System.Boolean,System.UInt16)">
+            <summary>
+Set the pixel and mask values at a given pixel space
+location.
+</summary>
+            <param name="X">
+The pixel space X coordinate of interest.
+</param>
+            <param name="Y">
+The pixel space Y coordinate of interest.
+</param>
+            <param name="VisibleValue">
+True if this pixel is visible.
+</param>
+            <param name="PixelValue">
+The raw pixel value at this location.
+</param>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageNoPixelsException">
+If Allocated is false.
+</exception>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageBadCoordException">
+If X is less than zero or not less than Width, or if Y is
+less than zero or not less than Height.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetPixel(System.Int32,System.Int32,System.Boolean@,System.UInt16@)">
+            <summary>
+Gets the mask (visible) and pixel value at the specified
+pixel space coordinates.
+</summary>
+            <param name="X">
+The pixel space X coordinate of interest.
+</param>
+            <param name="Y">
+The pixel space Y coordinate of interest.
+</param>
+            <param name="VisibleValue">
+True if this pixel was visible.
+</param>
+            <param name="PixelValue">
+The raw pixel value at this location. This
+is undefined if VisibleValue is false.
+</param>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageNoPixelsException">
+If Allocated is false.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.SetRoot(Cognex.VisionPro.CogImage16RangeRoot)">
+            <summary>
+Sets the range image root.
+</summary>
+            <param name="Root">
+The range image root.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.GetRoot(Cognex.VisionPro.CogImage16RangeRoot@)">
+            <summary>
+Returns the range image root object that contains
+the underlying pixel and mask roots.
+</summary>
+            <param name="Root">
+The range image root.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.CopyBase(Cognex.VisionPro.CogImageCopyModeConstants)">
+            <summary>
+Create a copy of this image. Pixel and mask data
+may be shared between images by specifying CopyMode to be
+CogImageCopyModeConstants.SharePixels"
+</summary>
+            <param name="CopyMode">
+How to copy. May be SharePixels, CopyPixels,
+or NoPixels.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Copy">
+            <summary>
+Create a copy of this image. Pixel and mask data
+are copied.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Copy(Cognex.VisionPro.CogImageCopyModeConstants)">
+            <summary>
+Create a copy of this image. Pixel and mask data
+may be shared between images by specifying CopyMode to be
+CogImageCopyModeConstants.SharePixels.
+</summary>
+            <param name="CopyMode">
+How to copy. May be SharePixels, CopyPixels, or NoPixels.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Allocate(System.Int32,System.Int32)">
+            <summary>
+Initialize the image with (undefined) pixel and mask
+data of the given width and height. This method may not be
+called more than once.
+</summary>
+            <param name="DesiredWidth">
+The desired width of the image in pixels.
+</param>
+            <param name="DesiredHeight">
+The desired height of the image in pixels.
+</param>
+            <exception cref="T:Cognex.VisionPro.Exceptions.CogImageAllocateSizeException">
+If the image is already allocated to a different size.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Finalize">
+            <summary>
+Finalize this CogImage16Range.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.Dispose">
+            <summary>
+Destruct this CogImage16Range.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(System.Drawing.Bitmap)">
+            <summary>
+Construct a new instance of this class using the supplied
+bitmap to specify pixel data. Note that this produces
+an image with an assumed identity mapping from "Sensor3D"
+space to root space.
+</summary>
+            <param name="Bmp">
+The Windows Bitmap to use as the definition of pixel data.
+</param>
+            <exception cref="System.ArgumentNullException">
+If Bmp is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(Cognex.VisionPro.CogImage16Grey,System.Int32,Cognex.VisionPro3D.ICog3DTransform)">
+            <summary>
+Construct a new instance of this class using the supplied
+pixel data, missing pixel value, and RootFromSensor3D transform.
+Mask data is automatically computed by identifying any pixel
+in the PixelData argument whose value matches the
+MissingPixelValue as not visible while all other pixels are
+set to visible.
+</summary>
+            <param name="PixelData">
+Use the pixels in this CogImage16Grey as the height or
+range data for this image.
+</param>
+            <param name="MissingPixelValue">
+Pixels in the PixelData argument that have this value
+are set to not visible, and all other pixels are
+set to visible.
+</param>
+            <param name="RootFromSensor3D">
+An ICog3DTransform that specifies the mapping from
+"Sensor3D" space to root space. May not be null.
+</param>
+            <exception cref="System.ArgumentNullException">
+If PixelData is null.
+</exception>
+            <exception cref="System.ArgumentOutOfRangeException">
+If MissingPixelValue is less than zero.
+</exception>
+            <exception cref="System.ArgumentNullException">
+If RootFromSensor3D is null.
+</exception>
+            <exception cref="System.ArgumentException">
+If PixelData is not allocated.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(Cognex.VisionPro.CogImage16Grey,Cognex.VisionPro.CogImage8Grey,Cognex.VisionPro3D.ICog3DTransform)">
+            <summary>
+Construct a new instance of this class using the supplied
+pixel data, mask data, and RootFromSensor3D transform.
+</summary>
+            <param name="PixelData">
+Use the pixels in this CogImage16Grey as the height or
+range data for this image.
+</param>
+            <param name="MaskData">
+Use the pixels in this CogImage8Grey as the mask data
+for this image. Defined pixel values are zero (not
+visible) and 255 (visible).
+</param>
+            <param name="RootFromSensor3D">
+An ICog3DTransform that specifies the mapping from
+"Sensor3D" space to root space. May not be null.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If PixelData is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If MaskData is null.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If RootFromSensor3D is null.
+</exception>
+            <exception cref="T:System.ArgumentException">
+If PixelData is not allocated.
+</exception>
+            <exception cref="T:System.ArgumentException">
+If MaskData is not allocated.
+</exception>
+            <exception cref="T:System.ArgumentException">
+If MaskData and PixelData do not have the same width.
+</exception>
+            <exception cref="T:System.ArgumentException">
+If MaskData and PixelData do not have the same height.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(System.Int32,System.Int32,Cognex.VisionPro3D.ICog3DTransform)">
+            <summary>
+Construct a new instance of this class using the supplied
+RootFromSensor3D transform and allocating storage for
+the specified image size.
+</summary>
+            <param name="Width">
+Width of this image in pixels. Must be greater than zero.
+</param>
+            <param name="Height">
+Height of this image in pixels. Must be greate than zero.
+</param>
+            <param name="RootFromSensor3D">
+An ICog3DTransform that specifies the mapping from
+"Sensor3D" space to root space. May not be null.
+</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+If Width is less than 1.
+</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+If Height is less than 1.
+</exception>
+            <exception cref="T:System.ArgumentNullException">
+If RootFromSensor3D is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(Cognex.VisionPro3D.ICog3DTransform)">
+            <summary>
+Construct a new instance of this class using the supplied
+RootFromSensor3D transform.
+</summary>
+            <param name="RootFromSensor3D">
+An ICog3DTransform that specifies the mapping from
+"Sensor3D" space to root space. May not be null.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If the input argument is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor(Cognex.VisionPro.CogImage16Range)">
+            <summary>
+Construct a new instance of this class as a shallow copy of the
+given instance.
+</summary>
+            <param name="Other">
+The CogImage16Range object to be copied. May not be null.
+</param>
+            <exception cref="T:System.ArgumentNullException">
+If the input argument is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16Range.#ctor">
+            <summary>
+Construct a new instance of this class.
+</summary>
+        </member>
+        <member name="F:Cognex.VisionPro.CogImage16Range.SfPixelFromRootTransform3D">
+            <summary>
+This bit will be set in the EventArgs of a Changed event
+every time the value returned by PixelFromRootTransform3D
+may have changed.
+</summary>
+        </member>
+        <member name="F:Cognex.VisionPro.CogImage16Range.SfSelectedSpaceName3D">
+            <summary>
+This bit will be set in the EventArgs of a Changed event
+every time the value returned by SelectedSpaceName3D
+may have changed.
+</summary>
+        </member>
+        <member name="F:Cognex.VisionPro.CogImage16Range.SfPixelFromRootTransform">
+            <summary>
+This bit will be set in the EventArgs of a Changed event
+every time the value returned by PixelFromRootTransform
+may have changed.
+</summary>
+        </member>
+        <member name="F:Cognex.VisionPro.CogImage16Range.SfCoordinateSpaceTree">
+            <summary>
+This bit will be set in the EventArgs of a Changed event
+every time the value returned by CoordinateSpaceTree
+may have changed.
+</summary>
+        </member>
+        <member name="F:Cognex.VisionPro.CogImage16Range.SfSelectedSpaceName">
+            <summary>
+This bit will be set in the EventArgs of a Changed event
+every time the value returned by SelectedSpaceName
+may have changed.
+</summary>
+        </member>
+        <member name="T:Cognex.VisionPro.CogImage16Range">
+            <summary>
+Object that describes a range image. A range image describes three
+dimensional surfaces. A CogImage16Range contains three dimensional
+height data, a "visible pixel mask" to identify which pixels are
+valid, three dimensional transform information, and two dimensional
+transform information.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+Serialization constructor for CogImage16RangeRoot object.
+</summary>
+            <param name="Info">
+The standard SerializationInfo argument.
+</param>
+            <param name="Ctxt">
+The standard StreamingContext argument.
+</param>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.GetMaskRoot">
+            <summary>
+Get the ICogImage8Root that corresponds to mask data.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.GetPixelRoot">
+            <summary>
+Get the ICogImage16Root that corresponds to pixel data.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16RangeRoot.Width">
+            <summary>
+Width of the image in pixels.
+</summary>
+        </member>
+        <member name="P:Cognex.VisionPro.CogImage16RangeRoot.Height">
+            <summary>
+Height of the image in pixels.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.Finalize">
+            <summary>
+Finalize this CogImage16RangeRoot.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.Dispose">
+            <summary>
+Destruct this CogImage16RangeRoot.
+</summary>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.#ctor(Cognex.VisionPro.CogImage16RangeRoot)">
+            <summary>
+Constructs a new instance of this class as a deep copy of the
+given instance.
+</summary>
+            <param name="Other">
+The CogImage16Root object to be copied. May not be null.
+</param>
+            <exception cref="System.ArgumentNullException">
+If the input argument is null.
+</exception>
+        </member>
+        <member name="M:Cognex.VisionPro.CogImage16RangeRoot.#ctor(Cognex.VisionPro.ICogImage16Root,Cognex.VisionPro.ICogImage8Root)">
+            <summary>
+Constructs a new instance of this class from the supplied
+parameters.
+</summary>
+            <param name="PixelRoot">
+The pixel root.
+</param>
+            <param name="MaskRoot">
+The mask root.
+</param>
+            <exception cref="System.ArgumentNullException">
+If either argument is null.
+</exception>
+        </member>
+        <member name="T:Cognex.VisionPro.CogImage16RangeRoot">
+            <summary>
+Object that holds the raw pixel and mask data of a range image.
+</summary>
+        </member>
+    </members>
+</doc>
