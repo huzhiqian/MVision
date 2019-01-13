@@ -22,7 +22,7 @@ using System.Runtime.Serialization;
 namespace Halcon.MVision.Implementation.Internal
 {
     [Serializable]
-    public class HalAcqContrast : CAcqOperatorBase, IHalAcqContrast,IHalChangedEvent,ISerializable,ICloneable
+    public class HalAcqContrast : CAcqOperatorBase, IHalAcqContrast, IHalChangedEvent, ISerializable, ICloneable
     {
         [NonSerialized]
         private HTuple __acqHandle;
@@ -38,13 +38,14 @@ namespace Halcon.MVision.Implementation.Internal
         /// <summary>
         /// 当OffsetY发生变更时，这个位将被设置在changed事件中
         /// </summary>
+          [NonSerialized]
         public const long Sfcontrast = 1L;
-
+        [NonSerialized]
         public const long SfcontrastMin = 2L;
-
+        [NonSerialized]
         public const long SfcontrastMax = 4L;
         #endregion
-
+        [NonSerialized]
         private static StateFlagsCollection _stateFlags = null;
 
         #region 构造函数
@@ -59,15 +60,17 @@ namespace Halcon.MVision.Implementation.Internal
             contrast = other.contrast;
             contrastMin = other.contrast;
             contrastMax = other.contrastMax;
+            GetParamIsExist();
         }
 
-        public HalAcqContrast(HTuple hAcq)
+        public HalAcqContrast(ref HTuple hAcq)
         {
             __acqHandle = hAcq;
             if (__acqHandle.TupleNotEqual(null))
             {
                 _stateFlags = GetStateFlages();
-
+                InitializePram();
+                GetParamIsExist();
             }
         }
         /// <summary>
@@ -77,10 +80,12 @@ namespace Halcon.MVision.Implementation.Internal
         /// <param name="context"></param>
         private HalAcqContrast(SerializationInfo info, StreamingContext context)
         {
-           _stateFlags= GetStateFlages();
-          contrast=  (HTuple)info.GetValue("contrast", typeof(HTuple));
-           contrastMin= (HTuple)info.GetValue("contrastMin", typeof(HTuple));
-           contrastMax=  (HTuple)info.GetValue("contrastMax", typeof(HTuple));
+         
+            GetStateFlages();
+            contrast = (HTuple)info.GetValue("contrast", typeof(HTuple));
+            contrastMin = (HTuple)info.GetValue("contrastMin", typeof(HTuple));
+            contrastMax = (HTuple)info.GetValue("contrastMax", typeof(HTuple));
+           
         }
 
         #endregion
@@ -98,6 +103,7 @@ namespace Halcon.MVision.Implementation.Internal
                 {
                     __acqHandle = value;
                     InitializePram();
+                    GetParamIsExist();
                 }
             }
         }
@@ -111,7 +117,8 @@ namespace Halcon.MVision.Implementation.Internal
             {
                 if (__acqHandle.TupleNotEqual(null))
                 {
-                    SetContrast(value);
+                    if (value == contrast)
+                        SetContrast(value);
                 }
             }
         }
@@ -137,12 +144,12 @@ namespace Halcon.MVision.Implementation.Internal
             get { return contrastMax; }
         }
 
-       public int ChangedEventSuspended
+        public int ChangedEventSuspended
         {
             get { return 0; }
         }
 
-       public StateFlagsCollection StateFlags
+        public StateFlagsCollection StateFlags
         {
             get { return _stateFlags; }
         }
@@ -200,14 +207,18 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetContrast()
         {
-            contrast = GetParam(__acqHandle,new HTuple("Contrast"));
+            contrast = GetParam(__acqHandle, new HTuple("Contrast"));
         }
         /// <summary>
         /// 设置对比度
         /// </summary>
         private void SetContrast(HTuple value)
         {
-            SetParam(__acqHandle,new HTuple("Contrast"),value);
+            SetParam(__acqHandle, new HTuple("Contrast"), value);
+            contrast = value;
+            GetContrastMinAndMax();
+            if (Changed != null)
+                Changed(this,new HalChangedEventArgs(0));
         }
 
         private void GetContrastMinAndMax()
@@ -216,17 +227,17 @@ namespace Halcon.MVision.Implementation.Internal
             contrastMax = GetParamRangeMax(__acqHandle, "Contrast");
         }
 
-     
+
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            GetObjectData(info,context);
+            GetObjectData(info, context);
         }
 
         protected void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("contrast", contrast,typeof(HTuple));
+            info.AddValue("contrast", contrast, typeof(HTuple));
             info.AddValue("contrastMin", contrastMin, typeof(HTuple));
-            info.AddValue("contrastMax", contrastMax,typeof(HTuple));
+            info.AddValue("contrastMax", contrastMax, typeof(HTuple));
         }
 
         object ICloneable.Clone()
@@ -239,6 +250,10 @@ namespace Halcon.MVision.Implementation.Internal
             return new HalAcqContrast(this);
         }
 
+        private void GetParamIsExist()
+        {
+            isExist = JudgeParamExist(__acqHandle, new HTuple("Contrast"));
+        }
         #endregion
 
         #region 委托

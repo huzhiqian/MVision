@@ -29,7 +29,7 @@ namespace Halcon.MVision.Implementation.Internal
         [NonSerialized]
         private HTuple __acqHandle;
 
-        private HTuple offSetX;
+        private HTuple offsetX;
         private HTuple offsetX_Min;
         private HTuple offsetX_Max;
 
@@ -118,7 +118,7 @@ namespace Halcon.MVision.Implementation.Internal
             Changed = null;
             GetStateFlages();
             //设置参数
-            offSetX = other.offSetX;
+            offsetX = other.offsetX;
             offsetX_Min = other.offsetX_Min;
             offsetX_Max = other.offsetX_Max;
 
@@ -157,9 +157,10 @@ namespace Halcon.MVision.Implementation.Internal
         /// <param name="context"></param>
         private HalAcqImageProperty(SerializationInfo info, StreamingContext context)
         {
+          
             _stateFlags = GetStateFlages();
             //加载参数
-            offSetX = (HTuple)info.GetValue("offSetX", typeof(HTuple));
+            offsetX = (HTuple)info.GetValue("offsetX", typeof(HTuple));
             offsetX_Min = (HTuple)info.GetValue("offsetX_Min", typeof(HTuple));
             offsetX_Max = (HTuple)info.GetValue("offsetX_Max", typeof(HTuple));
 
@@ -188,7 +189,7 @@ namespace Halcon.MVision.Implementation.Internal
             {
                 if (value.TupleNotEqual(__acqHandle) && value.TupleNotEqual(null))
                 {
-                    __acqHandle = value;
+                        __acqHandle = value;
                     //重新设置相机句柄后，重新设置参数
                     ResetCamHandleToSetparam();
                 }
@@ -199,10 +200,10 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         HTuple IHalAcqImageProperty.OffsetX
         {
-            get { return offSetX; }
+            get { return offsetX; }
             set
             {
-                if (value != offSetX)
+                if (value.TupleNotEqual(offsetX))
                 {
                     SetOffsetX(value);
                 }
@@ -217,7 +218,7 @@ namespace Halcon.MVision.Implementation.Internal
             get { return offSetY; }
             set
             {
-                if (offSetY != value)
+                if (offSetY.TupleNotEqual(value))
                     SetOffsetX(value);
             }
         }
@@ -230,7 +231,7 @@ namespace Halcon.MVision.Implementation.Internal
             get { return width; }
             set
             {
-                if (width != value)
+                if (width.TupleNotEqual(value))
                     SetWidth(value);
             }
         }
@@ -243,7 +244,7 @@ namespace Halcon.MVision.Implementation.Internal
             get { return height; }
             set
             {
-                if (height != value)
+                if (height.TupleNotEqual(value))
                     SetHeight(value);
             }
         }
@@ -363,7 +364,7 @@ namespace Halcon.MVision.Implementation.Internal
         {
             SetWidth(width);
             SetHeight(height);
-            SetOffsetX(offSetX);
+            SetOffsetX(offsetX);
             SetOffsetY(offSetY);
         }
 
@@ -410,13 +411,15 @@ namespace Halcon.MVision.Implementation.Internal
         /// 设置图像左上角X偏移
         /// </summary>
         /// <param name="val"></param>
-        private bool SetOffsetX(int val)
+        private bool SetOffsetX(HTuple val)
         {
-            if (SetParam(__acqHandle, new HTuple("OffsetX"), new HTuple(val)))
+            if (SetParam(__acqHandle, new HTuple("OffsetX"), val))
             {
-                offSetX = val;
+                offsetX = val;
                 GetOffsetXMin();
                 GetOffsetXMax();
+                GetWidthMax();
+                GetWidthMin();
                 //引发changed事件
                 HalChangedEventHandler changeEvent = Changed;
                 if (changeEvent != null)
@@ -431,13 +434,15 @@ namespace Halcon.MVision.Implementation.Internal
         /// 设置图像左上角Y偏移
         /// </summary>
         /// <param name="val"></param>
-        private bool SetOffsetY(int val)
+        private bool SetOffsetY(HTuple val)
         {
-            if (SetParam(__acqHandle, new HTuple("OffsetY"), new HTuple(val)))
+            if (SetParam(__acqHandle, new HTuple("OffsetY"), val))
             {
                 offSetY = val;
                 GetOffsetYMin();
                 GetOffsetYMax();
+                GetHeightMax();
+                GetHeightMin();
                 HalChangedEventHandler changedEvent = Changed;
                 if (changedEvent != null)
                 {
@@ -452,13 +457,15 @@ namespace Halcon.MVision.Implementation.Internal
         /// 设置图像宽度
         /// </summary>
         /// <param name="val">图像宽度值</param>
-        private bool SetWidth(int val)
+        private bool SetWidth(HTuple val)
         {
-            if (SetParam(__acqHandle, new HTuple("Width"), new HTuple(val)))
+            if (SetParam(__acqHandle, new HTuple("Width"), val))
             {
                 width = val;
                 GetWidthMin();
                 GetWidthMax();
+                GetOffsetXMax();
+                GetOffsetXMin();
                 HalChangedEventHandler changedEvent = Changed;
                 if (changedEvent != null)
                     changedEvent(this, new HalChangedEventArgs(SfWidth));
@@ -471,13 +478,16 @@ namespace Halcon.MVision.Implementation.Internal
         /// 设置图像高度
         /// </summary>
         /// <param name="val">图像高度值</param>
-        private bool SetHeight(int val)
+        private bool SetHeight(HTuple val)
         {
-            if (SetParam(__acqHandle, new HTuple("Height"), new HTuple(val)))
+            if (SetParam(__acqHandle, new HTuple("Height"),val))
             {
+                Console.WriteLine($"{val.I.ToString()}");
                 height = val;
                 GetHeightMin();
                 GetHeightMax();
+                GetOffsetYMax();
+                GetOffsetYMin();
                 HalChangedEventHandler changedEvent = Changed;
                 if (changedEvent != null)
                     changedEvent(this, new HalChangedEventArgs(SfHeight));
@@ -494,7 +504,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetOffsetX()
         {
-            offSetX = GetParam(__acqHandle, new HTuple("OffsetX"));
+            offsetX = GetParam(__acqHandle, new HTuple("OffsetX"));
         }
 
         /// <summary>
@@ -526,7 +536,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetOffsetXMin()
         {
-            offsetX_Min = GetParamRangeMin(__acqHandle, "OffsetX");
+            offsetX_Min = GetParamRangeMin(__acqHandle, new HTuple("OffsetX"));
         }
 
         /// <summary>
@@ -534,7 +544,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetOffsetXMax()
         {
-            offsetX_Max = GetParamRangeMax(__acqHandle, "OffsetX");
+            offsetX_Max = GetParamRangeMax(__acqHandle, new HTuple("OffsetX"));
         }
 
         /// <summary>
@@ -542,7 +552,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetOffsetYMin()
         {
-            offsetY_Min = GetParamRangeMin(__acqHandle, "OffsetY");
+            offsetY_Min = GetParamRangeMin(__acqHandle, new HTuple("OffsetY"));
         }
 
         /// <summary>
@@ -550,7 +560,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetOffsetYMax()
         {
-            offsetY_Max = GetParamRangeMax(__acqHandle, "OffsetY");
+            offsetY_Max = GetParamRangeMax(__acqHandle, new HTuple("OffsetY"));
         }
 
         /// <summary>
@@ -558,7 +568,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetWidthMin()
         {
-            width_Min = GetParamRangeMin(__acqHandle, "Width");
+            width_Min = GetParamRangeMin(__acqHandle, new HTuple("Width"));
         }
 
         /// <summary>
@@ -566,7 +576,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetWidthMax()
         {
-            width_Max = GetParamRangeMax(__acqHandle, "Width");
+            width_Max = GetParamRangeMax(__acqHandle, new HTuple("Width"));
         }
 
         /// <summary>
@@ -574,7 +584,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetHeightMin()
         {
-            height_Min = GetParamRangeMin(__acqHandle, "Height");
+            height_Min = GetParamRangeMin(__acqHandle, new HTuple("Height"));
         }
 
         /// <summary>
@@ -582,7 +592,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         private void GetHeightMax()
         {
-            height_Max = GetParamRangeMax(__acqHandle, "Height");
+            height_Max = GetParamRangeMax(__acqHandle, new HTuple("Height"));
         }
 
 
@@ -598,9 +608,9 @@ namespace Halcon.MVision.Implementation.Internal
         /// <param name="context"></param>
         protected virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            info.AddValue("offsetX", offSetX, typeof(HTuple));
+            info.AddValue("offsetX", offsetX, typeof(HTuple));
             info.AddValue("offsetX_Min", offsetX_Min, typeof(HTuple));
-            info.AddValue("OffsetX_Max", offsetX_Max, typeof(HTuple));
+            info.AddValue("offsetX_Max", offsetX_Max, typeof(HTuple));
 
             info.AddValue("offsetY", offSetY, typeof(HTuple));
             info.AddValue("offsetY_Min", offsetY_Min, typeof(HTuple));

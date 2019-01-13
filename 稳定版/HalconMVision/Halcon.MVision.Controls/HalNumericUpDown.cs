@@ -20,5 +20,35 @@ namespace Halcon.MVision.Controls
         {
 
         }
+
+        #region 属性
+
+
+        #endregion
+
+
+        #region 公共方法
+
+
+        #endregion
+
+
+        #region  私有方法
+
+
+
+        #endregion
+
+
+        #region 委托
+
+
+        #endregion
+
+
+        #region 事件
+
+
+        #endregion
     }
 }

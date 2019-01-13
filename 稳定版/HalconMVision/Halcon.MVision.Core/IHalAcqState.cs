@@ -1,6 +1,6 @@
 ﻿//Halcon.MVision.IHalAcqState
 using HalconDotNet;
-
+using System;
 
 namespace Halcon.MVision
 {
@@ -29,5 +29,7 @@ namespace Halcon.MVision
         {
             get;
         }
+
+        event Action<bool> CameraLinkStateChanged;
     }
 }

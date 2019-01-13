@@ -209,12 +209,12 @@ namespace Halcon.MVision.Implementation.Internal
         /// <returns></returns>
         public bool JudgeParamExist(HTuple deviceHandle, HTuple paramName)
         {
-            if (deviceHandle.TupleNotEqual(null)) throw new NullReferenceException("设备句柄为空");
+            if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_halconError;
             try
             {
                 HTuple names;
-                HOperatorSet.GetFramegrabberParam(deviceHandle,new HTuple(""),out names);
+                HOperatorSet.GetFramegrabberParam(deviceHandle,new HTuple("available_param_names"),out names);
                 if (((IList)names.SArr).Contains(paramName.S))
                     return true;
                 else

@@ -38,7 +38,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// 构造函数
         /// </summary>
         /// <param name="hAcq">相机句柄</param>
-        public HalAcqTrigger(HTuple hAcq)
+        public HalAcqTrigger(ref HTuple hAcq)
         {
             if (hAcq.TupleNotEqual(null))
             {
@@ -50,6 +50,7 @@ namespace Halcon.MVision.Implementation.Internal
 
         private  HalAcqTrigger(HalAcqTrigger other)
         {
+
             GetStateFlages();
             Changed = null;
             __acqHandle = other.__acqHandle;
@@ -60,6 +61,7 @@ namespace Halcon.MVision.Implementation.Internal
         }
         private HalAcqTrigger(SerializationInfo info, StreamingContext context)
         {
+          
             GetStateFlages();
             triggerEnable = info.GetBoolean("triggerEnable");
             currentTrigger = (HTuple)info.GetValue("currentTrigger",typeof(HTuple));
@@ -74,7 +76,7 @@ namespace Halcon.MVision.Implementation.Internal
         {
             set
             {
-                if (!HTuple.Equals(__acqHandle, value))
+                if (value.TupleNotEqual(__acqHandle) && value.TupleNotEqual(null))
                 {
                     __acqHandle = value;
                     SetCameraTrigger();
@@ -94,8 +96,11 @@ namespace Halcon.MVision.Implementation.Internal
                     if (__acqHandle == null)
                         throw new NullReferenceException("Trigger AcqHandle");
                     if (SetTriggerModel(value))
+                    {
                         triggerEnable = value;
-
+                        if (Changed != null)
+                            Changed(this, new HalChangedEventArgs(0));
+                    }
                 }
             }
         }
@@ -109,10 +114,14 @@ namespace Halcon.MVision.Implementation.Internal
             {
                 if (value != currentTrigger)
                 {
-                    if (!__acqHandle.Equals(null))
+                    if (!__acqHandle.TupleEqual(null))
                     {
                         if (SetCameraTriggerSource(value))
+                        {
                             currentTrigger = value;
+                            if (Changed != null)
+                                Changed(this,new HalChangedEventArgs(0));
+                        }
                     }
                 }
             }
@@ -159,7 +168,7 @@ namespace Halcon.MVision.Implementation.Internal
         private void InitializeParam()
         {
             GetCameraAllTriggerSource();
-            GetTriggerModel();
+            GetTriggerMode();
             GetCurrentTrigger();
         }
         /// <summary>
@@ -198,14 +207,14 @@ namespace Halcon.MVision.Implementation.Internal
         {
             if (model)
             {
-                if (SetParam(__acqHandle, new HTuple("TriggerModel"), new HTuple("on")))
+                if (SetParam(__acqHandle, new HTuple("TriggerMode"), new HTuple("On")))
                     return true;
                 else
                     return false;
             }
             else
             {
-                if (SetParam(__acqHandle, new HTuple("TriggerModel"), new HTuple("off")))
+                if (SetParam(__acqHandle, new HTuple("TriggerMode"), new HTuple("Off")))
                     return true;
                 else
                     return false;
@@ -233,10 +242,10 @@ namespace Halcon.MVision.Implementation.Internal
         /// <summary>
         /// 获取相机除法使能
         /// </summary>
-        private void GetTriggerModel()
+        private void GetTriggerMode()
         {
-           HTuple model= GetParam(__acqHandle, new HTuple("TriggerModel"));
-            if (model.S == "on")
+           HTuple model= GetParam(__acqHandle, new HTuple("TriggerMode"));
+            if (model.TupleEqual(new HTuple("On")))
                 triggerEnable = true;
             else
                 triggerEnable = false;

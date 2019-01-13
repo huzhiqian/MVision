@@ -32,17 +32,17 @@ namespace Halcon.MVision.Implementation.Internal
         private HTuple brightnessMax;
 
         #region StateFlags
-
+        [NonSerialized]
         public const long SfBrightness = 1;
-
+        [NonSerialized]
         public const long SfBrightnessMin = 2;
-
+        [NonSerialized]
         public const long SfBrightnessMax = 4;
         #endregion
 
         [NonSerialized]
         private bool isExist = false;
-
+        [NonSerialized]
         private static StateFlagsCollection _stateFlags = null;
         #region 构造函数
 
@@ -56,9 +56,10 @@ namespace Halcon.MVision.Implementation.Internal
             brightness = other.brightness;
             brightnessMin = other.brightnessMin;
             brightnessMax = other.brightnessMax;
+            GetParamIsExist();
         }
 
-        public HalAcqBrightness(HTuple hAcq)
+        public HalAcqBrightness(ref HTuple hAcq)
         {
             __acqhandle = hAcq;
             if (__acqhandle.TupleNotEqual(null))
@@ -66,6 +67,7 @@ namespace Halcon.MVision.Implementation.Internal
                 GetStateFlages();
                 //获取相机中的参数
                 InitializeParam();
+                GetParamIsExist();
             }
         }
         /// <summary>
@@ -75,11 +77,13 @@ namespace Halcon.MVision.Implementation.Internal
         /// <param name="context"></param>
         private HalAcqBrightness(SerializationInfo info, StreamingContext context)
         {
+           
             GetStateFlages();
             //反序列化相机参数
-            info.GetValue("brightness", typeof(HTuple));
-            info.GetValue("brightnessMin", typeof(HTuple));
-            info.GetValue("brightnessMax", typeof(HTuple));
+           brightness= (HTuple)info.GetValue("brightness", typeof(HTuple));
+           brightnessMin= (HTuple)info.GetValue("brightnessMin", typeof(HTuple));
+           brightnessMax= (HTuple)info.GetValue("brightnessMax", typeof(HTuple));
+           
         }
 
         #endregion
@@ -93,11 +97,12 @@ namespace Halcon.MVision.Implementation.Internal
         {
             set
             {
-                if (value.TupleNotEqual(__acqhandle) && __acqhandle.TupleNotEqual(null))
+                if (value.TupleNotEqual(__acqhandle) && value.TupleNotEqual(null))
                 {
                     __acqhandle = value;
                     //设置相机参数
                     ResetCamhandleTosetparam();
+                    GetParamIsExist();
                 }
             }
         }
@@ -111,8 +116,13 @@ namespace Halcon.MVision.Implementation.Internal
             {
                 if (__acqhandle.TupleNotEqual(value) && value.TupleNotEqual(null))
                 {
-                    if (SetBrightness(value))
-                        brightness = value;
+                    if (value != brightness)
+                        if (SetBrightness(value))
+                        {
+                            brightness = value;
+                            if (Changed != null)
+                                Changed(this,new HalChangedEventArgs(0));
+                        }         
                 }
             }
         }
@@ -189,13 +199,26 @@ namespace Halcon.MVision.Implementation.Internal
         private void InitializeParam()
         {
             GetBrightnessValue();
+            GetBrightnessMax();
+            GetBrightnessMin();
         }
         /// <summary>
         /// 获取相机亮度值
         /// </summary>
         private void GetBrightnessValue()
         {
-            brightness= GetParam(__acqhandle, new HTuple("Brightness"));
+            brightness = GetParam(__acqhandle, new HTuple("Brightness"));
+
+        }
+
+        private void GetBrightnessMin()
+        {
+            brightnessMin = GetParamRangeMin(__acqhandle, new HTuple("Brightness"));
+        }
+
+        private void GetBrightnessMax()
+        {
+            brightnessMax = GetParamRangeMax(__acqhandle, new HTuple("Brightness"));
         }
 
         /// <summary>
@@ -205,7 +228,12 @@ namespace Halcon.MVision.Implementation.Internal
         private bool SetBrightness(HTuple value)
         {
             if (!isExist) return false;
-            return SetParam(__acqhandle,new HTuple("Brightness"),value);
+            bool result = false;
+            result = SetParam(__acqhandle, new HTuple("Brightness"), value);
+            GetBrightnessMax();
+            GetBrightnessMin();
+
+            return result;
         }
 
         void IHalChangedEvent.SuspendChangedEvent()
@@ -247,7 +275,17 @@ namespace Halcon.MVision.Implementation.Internal
         protected virtual object Clone()
         {
             return new HalAcqBrightness(this)
-;        }
+;
+        }
+
+
+        /// <summary>
+        /// 判断参数是否存在
+        /// </summary>
+        private void GetParamIsExist()
+        {
+            isExist = JudgeParamExist(__acqhandle, new HTuple("Brightness"));
+        }
         #endregion
 
         #region 委托

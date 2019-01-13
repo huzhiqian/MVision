@@ -134,6 +134,22 @@ namespace Halcon.MVision
         {
             get;
         }
+
+        /// <summary>
+        /// 获取相机型号名
+        /// </summary>
+        string DeviceModelName
+        {
+            get;
+        }
+
+        /// <summary>
+        /// 获取相机固件版本
+        /// </summary>
+        string DeviceFirmwareVersion
+        {
+            get;
+        }
         #endregion
     }
 }

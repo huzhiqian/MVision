@@ -33,18 +33,21 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Awesomium.Core, Version=1.6.6.0, Culture=neutral, PublicKeyToken=e1a0d7c8071a5214" />
-    <Reference Include="Awesomium.Windows.Forms, Version=1.6.6.0, Culture=neutral, PublicKeyToken=9bd24830fbe304a0, processorArchitecture=x86" />
-    <Reference Include="ChangCi.MVision.Core">
-      <HintPath>I:\项目\Others\包装袋\视觉测试程序V2.0\HalAcquisitionTool\HalAcquisitionTool\bin\Release\ChangCi.MVision.Core.dll</HintPath>
+    <Reference Include="Halcon.MVision">
+      <HintPath>..\..\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.dll</HintPath>
     </Reference>
-    <Reference Include="HalAcquisitionTool">
-      <HintPath>I:\项目\Others\包装袋\视觉测试程序V2.0\HalAcquisitionTool\HalAcquisitionTool\bin\Release\HalAcquisitionTool.dll</HintPath>
+    <Reference Include="Halcon.MVision.Controls">
+      <HintPath>..\..\HalconMVision\Halcon.MVision.Controls\bin\Release\Halcon.MVision.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Halcon.MVision.Core">
+      <HintPath>..\..\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.Core.dll</HintPath>
     </Reference>
     <Reference Include="halcondotnet">
       <HintPath>I:\项目\Others\包装袋\视觉测试程序V2.0\HalDisplayImagePanel\HalDisplayImagePanel\bin\Release\halcondotnet.dll</HintPath>
     </Reference>
-    <Reference Include="HalDisplayImagePanel">
-      <HintPath>I:\项目\Others\包装袋\视觉测试程序V2.0\HalDisplayImagePanel\HalDisplayImagePanel\bin\Release\HalDisplayImagePanel.dll</HintPath>
+    <Reference Include="HalDisplayImagePanel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Others\包装袋\视觉测试程序V2.0\HalDisplayImagePanel\HalDisplayImagePanel\bin\Release\HalDisplayImagePanel.dll</HintPath>
     </Reference>
     <Reference Include="HalImage8Gary">
       <HintPath>I:\项目\Others\包装袋\视觉测试程序V2.0\HalDisplayImagePanel\HalDisplayImagePanel\bin\Release\HalImage8Gary.dll</HintPath>
@@ -61,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AcqForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AcqForm.Designer.cs">
+      <DependentUpon>AcqForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +78,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AcqForm.resx">
+      <DependentUpon>AcqForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

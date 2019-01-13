@@ -207,9 +207,9 @@ namespace Halcon.MVision
             {
                 throw new ArgumentNullException("文件名为空");
             }
-            if (path.EndsWith(".ccdq") || path.EndsWith(".CCDQ"))
+            if (!path.EndsWith(".hal") || path.EndsWith(".HAL"))
             {
-                throw new FormatException("文件格式不正确，文件扩展名必须是.ccdq或.CCDQ的文件");
+                throw new FormatException("文件格式不正确，文件扩展名必须是.hal或.HAL的文件");
             }
             return ;
            

@@ -26,11 +26,11 @@ namespace Halcon.MVision.Implementation.Internal
         [NonSerialized]
         private HTuple __acqHandle;
      
-        private double exposureMin = 0.0;
+        private HTuple exposureMin = 0.0;
      
-        private double exposureMax = 1000000.0;
+        private HTuple exposureMax = 1000000.0;
 
-        private double exposure = 5000.0;
+        private HTuple exposure = 5000.0;
 
         #region StateFlags
 
@@ -74,6 +74,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// <param name="context"></param>
         private HalAcqExposure(SerializationInfo info, StreamingContext context)
         {
+          
             GetStateFlags();
             exposure = (HTuple)info.GetValue("exposure",typeof(HTuple));
             exposureMin = (HTuple)info.GetValue("exposureMin",typeof(HTuple));
@@ -91,7 +92,7 @@ namespace Halcon.MVision.Implementation.Internal
         {
             set
             {
-                if (value != __acqHandle && value != null)
+                if (value.TupleNotEqual(__acqHandle)&& value.TupleNotEqual( null))
                 {
                     __acqHandle = value;
                     //设置曝光参数
@@ -127,7 +128,11 @@ namespace Halcon.MVision.Implementation.Internal
                 if (value != exposure)
                 {
                     if (SetCameraExposureTime(value))
+                    {
                         exposure = value;
+                        if (Changed != null)
+                            Changed(this, new HalChangedEventArgs(0));
+                    }
                 }
             }
         }
@@ -207,9 +212,9 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        private bool SetCameraExposureTime(double value)
+        private bool SetCameraExposureTime(HTuple value)
         {
-           return SetParam(__acqHandle, new HTuple("ExposureTime"),new HTuple(value));
+           return SetParam(__acqHandle, new HTuple("ExposureTime"),value);
         }
 
         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)

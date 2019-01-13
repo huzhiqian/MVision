@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.btn_OpenCamera = new System.Windows.Forms.Button();
-            this.btn_GrabImage = new System.Windows.Forms.Button();
-            this.btn_RealDisplay = new System.Windows.Forms.Button();
-            this.displayToolMenu1 = new HalDisplayImagePanel.DisplayToolMenu();
             this.panel1 = new System.Windows.Forms.Panel();
             this.displayImagePanel1 = new HalDisplayImagePanel.DisplayImagePanel();
+            this.displayToolMenu1 = new HalDisplayImagePanel.DisplayToolMenu();
             this.btn_OpenCamerasetting = new System.Windows.Forms.Button();
+            this.btn_RealDisplay = new System.Windows.Forms.Button();
+            this.btn_GrabImage = new System.Windows.Forms.Button();
+            this.btn_OpenCamera = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -64,44 +64,6 @@
             this.splitContainer1.SplitterDistance = 820;
             this.splitContainer1.TabIndex = 0;
             // 
-            // btn_OpenCamera
-            // 
-            this.btn_OpenCamera.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_OpenCamera.Location = new System.Drawing.Point(67, 92);
-            this.btn_OpenCamera.Name = "btn_OpenCamera";
-            this.btn_OpenCamera.Size = new System.Drawing.Size(236, 45);
-            this.btn_OpenCamera.TabIndex = 0;
-            this.btn_OpenCamera.Text = "打开相机";
-            this.btn_OpenCamera.UseVisualStyleBackColor = true;
-            // 
-            // btn_GrabImage
-            // 
-            this.btn_GrabImage.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_GrabImage.Location = new System.Drawing.Point(22, 181);
-            this.btn_GrabImage.Name = "btn_GrabImage";
-            this.btn_GrabImage.Size = new System.Drawing.Size(135, 45);
-            this.btn_GrabImage.TabIndex = 1;
-            this.btn_GrabImage.Text = "手动取像";
-            this.btn_GrabImage.UseVisualStyleBackColor = true;
-            // 
-            // btn_RealDisplay
-            // 
-            this.btn_RealDisplay.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btn_RealDisplay.Location = new System.Drawing.Point(194, 181);
-            this.btn_RealDisplay.Name = "btn_RealDisplay";
-            this.btn_RealDisplay.Size = new System.Drawing.Size(135, 45);
-            this.btn_RealDisplay.TabIndex = 2;
-            this.btn_RealDisplay.Text = "实时显示";
-            this.btn_RealDisplay.UseVisualStyleBackColor = true;
-            // 
-            // displayToolMenu1
-            // 
-            this.displayToolMenu1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.displayToolMenu1.Location = new System.Drawing.Point(0, 0);
-            this.displayToolMenu1.Name = "displayToolMenu1";
-            this.displayToolMenu1.Size = new System.Drawing.Size(820, 36);
-            this.displayToolMenu1.TabIndex = 0;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.displayImagePanel1);
@@ -113,6 +75,7 @@
             // 
             // displayImagePanel1
             // 
+            this.displayImagePanel1.DisplayCoordinate = false;
             this.displayImagePanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.displayImagePanel1.hImage = null;
             this.displayImagePanel1.HO_Image = null;
@@ -121,6 +84,14 @@
             this.displayImagePanel1.Name = "displayImagePanel1";
             this.displayImagePanel1.Size = new System.Drawing.Size(820, 589);
             this.displayImagePanel1.TabIndex = 0;
+            // 
+            // displayToolMenu1
+            // 
+            this.displayToolMenu1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.displayToolMenu1.Location = new System.Drawing.Point(0, 0);
+            this.displayToolMenu1.Name = "displayToolMenu1";
+            this.displayToolMenu1.Size = new System.Drawing.Size(820, 36);
+            this.displayToolMenu1.TabIndex = 0;
             // 
             // btn_OpenCamerasetting
             // 
@@ -131,6 +102,37 @@
             this.btn_OpenCamerasetting.TabIndex = 3;
             this.btn_OpenCamerasetting.Text = "打开相机设置";
             this.btn_OpenCamerasetting.UseVisualStyleBackColor = true;
+            this.btn_OpenCamerasetting.Click += new System.EventHandler(this.btn_OpenCamerasetting_Click);
+            // 
+            // btn_RealDisplay
+            // 
+            this.btn_RealDisplay.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_RealDisplay.Location = new System.Drawing.Point(194, 181);
+            this.btn_RealDisplay.Name = "btn_RealDisplay";
+            this.btn_RealDisplay.Size = new System.Drawing.Size(135, 45);
+            this.btn_RealDisplay.TabIndex = 2;
+            this.btn_RealDisplay.Text = "实时显示";
+            this.btn_RealDisplay.UseVisualStyleBackColor = true;
+            // 
+            // btn_GrabImage
+            // 
+            this.btn_GrabImage.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_GrabImage.Location = new System.Drawing.Point(22, 181);
+            this.btn_GrabImage.Name = "btn_GrabImage";
+            this.btn_GrabImage.Size = new System.Drawing.Size(135, 45);
+            this.btn_GrabImage.TabIndex = 1;
+            this.btn_GrabImage.Text = "手动取像";
+            this.btn_GrabImage.UseVisualStyleBackColor = true;
+            // 
+            // btn_OpenCamera
+            // 
+            this.btn_OpenCamera.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_OpenCamera.Location = new System.Drawing.Point(67, 92);
+            this.btn_OpenCamera.Name = "btn_OpenCamera";
+            this.btn_OpenCamera.Size = new System.Drawing.Size(236, 45);
+            this.btn_OpenCamera.TabIndex = 0;
+            this.btn_OpenCamera.Text = "打开相机";
+            this.btn_OpenCamera.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

@@ -35,5 +35,7 @@ namespace Halcon.MVision
             get;
             set;
         }
+
+        event HalChangedEventHandler Changed;
     }
 }

@@ -1,5 +1,6 @@
 ﻿// Halcon.MVision.Implementation.Internal.HalAcqState
 using System;
+using System.Windows.Forms;
 using HalconDotNet;
 
 //**********************************************
@@ -24,7 +25,8 @@ namespace Halcon.MVision.Implementation.Internal
     {
         private HTuple __acqHandle;
         private bool isCameraLinked = false;
-        private string camersStatus = "unavailable";
+        private string cameraStatus = "unavailable";
+
 
         #region 构造函数
         /// <summary>
@@ -43,6 +45,7 @@ namespace Halcon.MVision.Implementation.Internal
         }
 
 
+
         #endregion
 
         #region 属性
@@ -55,6 +58,16 @@ namespace Halcon.MVision.Implementation.Internal
                 {
                     __acqHandle = value;
                     GetCameraStatus();
+                }
+                else
+                {
+                    if (isCameraLinked)
+                    {
+                        isCameraLinked = false;
+                        cameraStatus = "unavailable";
+                        if (CameraLinkStateChanged != null)
+                            CameraLinkStateChanged(isCameraLinked);
+                    }
                 }
             }
         }
@@ -72,7 +85,7 @@ namespace Halcon.MVision.Implementation.Internal
         /// </summary>
         string IHalAcqState.CameraStatus
         {
-            get { return camersStatus; }
+            get { return cameraStatus; }
         }
 
 
@@ -88,14 +101,47 @@ namespace Halcon.MVision.Implementation.Internal
 
         private void GetCameraStatus()
         {
+            //获取设备名
+            HTuple hv_deviceName;
+            HOperatorSet.GetFramegrabberParam(__acqHandle, new HTuple("device"), out hv_deviceName);
+
             HTuple boardInfo, boardInfoValue;
-            HOperatorSet.InfoFramegrabber(__acqHandle, new HTuple("info_boards"), out boardInfo, out boardInfoValue);
+            HOperatorSet.InfoFramegrabber("GigEVision2", new HTuple("info_boards"), out boardInfo, out boardInfoValue);
 
-            string[] items = new string[] { };
-            //截断字符串
-            items = boardInfoValue.S.Split('|');
-            camersStatus = GetBoardInfoItem(items, "status");
+            foreach (var item in boardInfoValue.SArr)
+            {
+                string[] strItem = new string[] { };
+                //截断字符串
+                strItem = item.Split('|');
 
+                if (GetBoardInfoItem(strItem, "device").Equals(hv_deviceName.S.Trim()))
+                {
+
+                    cameraStatus = GetBoardInfoItem(strItem, "status");
+
+                    if (cameraStatus.Equals("busy"))
+                    {
+                        if (isCameraLinked == false)
+                        {
+                            isCameraLinked = true;
+                            if (CameraLinkStateChanged != null)
+                                CameraLinkStateChanged(isCameraLinked);
+                        }
+                    }
+                    else
+                    {
+                        if (isCameraLinked)
+                        {
+                            isCameraLinked = false;
+                            if (CameraLinkStateChanged != null)
+                                CameraLinkStateChanged(isCameraLinked);
+                        }
+                    }
+                    break;
+                }
+                else
+                    continue;
+            }
         }
 
         private string GetBoardInfoItem(string[] items, string targetStr)
@@ -122,8 +168,10 @@ namespace Halcon.MVision.Implementation.Internal
         #endregion
 
         #region 事件
-
-
+        /// <summary>
+        /// 相机连接状态发生改变
+        /// </summary>
+        public event Action<bool> CameraLinkStateChanged;
 
         #endregion
     }

@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Halcon.MVision.Controls</RootNamespace>
     <AssemblyName>Halcon.MVision.Controls</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +35,13 @@
     <Reference Include="Halcon.MVision">
       <HintPath>..\Halcon.MVision\bin\Release\Halcon.MVision.dll</HintPath>
     </Reference>
+    <Reference Include="Halcon.MVision.Core">
+      <HintPath>..\Halcon.MVision.Core\bin\Release\Halcon.MVision.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=17.12.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\MVTec\HALCON-17.12-Progress\bin\dotnet35\halcondotnet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -42,10 +50,15 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HalAcqFifoEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HalAcqFifoEdit.Designer.cs">
+      <DependentUpon>HalAcqFifoEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="HalComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -70,6 +83,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="HalAcqFifoEdit.resx">
+      <DependentUpon>HalAcqFifoEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

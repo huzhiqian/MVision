@@ -6,12 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Halcon.MVision;
+
 
 namespace HalconCameraDLLTest
 {
     public partial class Form1 : Form
     {
-        private HalAcquisitionTool.HalAcqFifoTool myHalAcqFifoTool; //相机控制对象
+        private HalAcqFifoTool halAcqFifo;
 
         public Form1()
         {
@@ -43,12 +45,24 @@ namespace HalconCameraDLLTest
 
         private void InitialSoftware()
         {
+            try
+            {
+                string fileName = @"C:\Users\Administrator\Desktop\AcqTest.hal";
+                halAcqFifo = Halcon.MVision.HalSerializer.LoadObjectFormFile(fileName) as HalAcqFifoTool;
+            }
+            finally { }
 
         }
-            
-        
-            
+
+       
+
 
         #endregion
+
+        private void btn_OpenCamerasetting_Click(object sender, EventArgs e)
+        {
+            AcqForm fm = new AcqForm(halAcqFifo);
+            fm.ShowDialog();
+        }
     }
 }

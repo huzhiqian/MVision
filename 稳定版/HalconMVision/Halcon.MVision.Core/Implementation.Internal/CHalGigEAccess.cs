@@ -38,12 +38,18 @@ namespace Halcon.MVision.Implementation.Internal
         private string status;
         private string gatewayAddress;//网关
         private string version;//版本号
+
+        private string deviceModelName;//相机模型名称
+        private string deviceFirmwareVersion;//相机固件版本
         #region 构造函数
 
         public CHalGigEAccess(ref HTuple hAcq )
         {
-            __acqHandle = hAcq;
-            ParsedString();//解析
+            if (hAcq.TupleNotEqual(null))
+            {
+                __acqHandle = hAcq;
+                ParsedString();//解析 
+            }
         }
 
         #endregion
@@ -57,7 +63,7 @@ namespace Halcon.MVision.Implementation.Internal
         {
             set
             {
-                if (value != __acqHandle)
+                if (value != __acqHandle && value.TupleNotEqual(null))
                 {
                     __acqHandle = value;
                     ParsedString();
@@ -173,7 +179,21 @@ namespace Halcon.MVision.Implementation.Internal
             get { return version; }
         }
 
+        /// <summary>
+        /// 获取相机型号名称
+        /// </summary>
+        string IHalGigEAccess.DeviceModelName
+        {
+            get { return deviceModelName; }
+        }
 
+        /// <summary>
+        /// 获取相机固件版本号
+        /// </summary>
+        string IHalGigEAccess.DeviceFirmwareVersion
+        {
+            get { return deviceFirmwareVersion; }
+        }
         #endregion
 
         #region 公共方法
@@ -188,40 +208,48 @@ namespace Halcon.MVision.Implementation.Internal
         {
             if (__acqHandle == null)
                 throw new NullReferenceException("GigEAccess AcqHandle");
+
+            //获取相机名称
+            HTuple hv_deviceName;
+             HOperatorSet.GetFramegrabberParam(__acqHandle,"device",out hv_deviceName);
+            deviceName = hv_deviceName.S;
+
             HTuple boardInfo,boardInfoValue;
-            HOperatorSet.InfoFramegrabber(__acqHandle,new HTuple("info_boards"),out boardInfo,out boardInfoValue);
+            HOperatorSet.InfoFramegrabber("GigEVision2",new HTuple("info_boards"),out boardInfo,out boardInfoValue);
             try
             {
-                string[] items = new string[] { };
-                //截断字符串
-                items = boardInfoValue.S.Split('|');
+                foreach (var item in boardInfoValue.SArr)
+                {
+                    string[] strItem = new string[] { };
+                    //截断字符串
+                    strItem = boardInfoValue.S.Split('|');
+                    if (GetBoardInfoItem(strItem, "device").Equals(deviceName))
+                    {
+                        uniqueName = GetBoardInfoItem(strItem, "unique_name");    //获取设备唯一标识符
 
-                uniqueName = GetBoardInfoItem(items, "unique_name");    //获取设备唯一标识符
-                deviceName = GetBoardInfoItem(items, "device");
-                status = GetBoardInfoItem(items, "status");
-                currentIPAddress = GetBoardInfoItem(items, "device_ip");
-                hostIPAddress = GetBoardInfoItem(items, "interface_ip");
+                        status = GetBoardInfoItem(strItem, "status");
+                        currentIPAddress = GetBoardInfoItem(strItem, "device_ip");
+                        hostIPAddress = GetBoardInfoItem(strItem, "interface_ip");
+                        break;
+                    }
+                   
+                }
+                //Console.WriteLine("1");
+                HTuple hv_modelName;
+                HOperatorSet.GetFramegrabberParam(__acqHandle,new HTuple("DeviceModelName"),out hv_modelName);
+                deviceModelName = hv_deviceName.S;
 
-                HTuple GevCurrentIPAddress;
-                HOperatorSet.GetFramegrabberParam(__acqHandle,"GevCurrentSubnetMask",out GevCurrentIPAddress);
-                currentSubnetMask = GevCurrentIPAddress.S;
+                //Console.WriteLine("2");
+                HTuple hv_deviceFirmware;
+                HOperatorSet.GetFramegrabberParam(__acqHandle,new HTuple("DeviceFirmwareVersion"),out hv_deviceFirmware);
+                deviceFirmwareVersion = hv_deviceFirmware.S;
 
-                HTuple GevDeviceGateway;
-                HOperatorSet.GetFramegrabberParam(__acqHandle, "GevDeviceGateway",out GevDeviceGateway);
-                gatewayAddress = GevDeviceGateway.S;
-
-                HTuple GevDeviceMACAddress;
-                HOperatorSet.GetFramegrabberParam(__acqHandle, "GevDeviceMACAddress",out GevDeviceMACAddress);
-                macAddress = GevDeviceMACAddress.S;
-
-                HTuple GevInterfaceDefaultSubnetMask;
-                HOperatorSet.GetFramegrabberParam(__acqHandle, "GevInterfaceDefaultSubnetMask",out GevInterfaceDefaultSubnetMask);
-                hostSubnetMask = GevInterfaceDefaultSubnetMask.S;
-
+                //Console.WriteLine("7");
                 HTuple DeviceSerialNumber;
                 HOperatorSet.GetFramegrabberParam(__acqHandle, "DeviceSerialNumber",out DeviceSerialNumber);
                 cameraSerialNumber = DeviceSerialNumber.S;
 
+                //Console.WriteLine("8");
                 HTuple DeviceVersion;
                 HOperatorSet.GetFramegrabberParam(__acqHandle, "DeviceVersion",out DeviceVersion);
                 version = DeviceVersion.S;
