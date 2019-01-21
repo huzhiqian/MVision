@@ -56,7 +56,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHanlde.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-     
+
             try
             {
                 HTuple param;
@@ -66,8 +66,7 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                    throw  new HalconException(hv_HalconError,e.GetErrorMessage());
             }
         }
 
@@ -82,7 +81,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空！");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-         
+
             try
             {
                 HTuple param;
@@ -92,8 +91,7 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                    throw new HalconException(hv_HalconError,e.GetErrorMessage());
             }
         }
 
@@ -108,7 +106,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-       
+
             try
             {
                 HTuple tempParam;
@@ -128,8 +126,7 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                    throw new HalconException(hv_HalconError,e.GetErrorMessage());
             }
         }
 
@@ -144,7 +141,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-           
+
             try
             {
                 HTuple tempParam;
@@ -164,8 +161,7 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                throw new HalconException(hv_HalconError,e.GetErrorMessage());
             }
         }
 
@@ -177,11 +173,11 @@ namespace Halcon.MVision.Implementation.Internal
         /// <returns></returns>
         public virtual HTuple GetParamValues(HTuple deviceHandle, HTuple paramName)
         {
-            if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空"); 
+            if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
             HTuple param;
-            
+
             try
             {
                 HOperatorSet.GetFramegrabberParam(deviceHandle, new HTuple(paramName.S + "_values"), out param);
@@ -190,8 +186,7 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                throw new HalconException(hv_HalconError, e.GetErrorMessage());
             }
         }
 
@@ -208,7 +203,7 @@ namespace Halcon.MVision.Implementation.Internal
             try
             {
                 HTuple names;
-                HOperatorSet.GetFramegrabberParam(deviceHandle,new HTuple("available_param_names"),out names);
+                HOperatorSet.GetFramegrabberParam(deviceHandle, new HTuple("available_param_names"), out names);
                 if (((IList)names.SArr).Contains(paramName.S))
                     return true;
                 else
@@ -218,7 +213,7 @@ namespace Halcon.MVision.Implementation.Internal
             {
                 hv_halconError = e.GetErrorCode();
                 if ((int)hv_halconError < 0)
-                    throw e;                
+                    throw e;
             }
             return false;
         }
