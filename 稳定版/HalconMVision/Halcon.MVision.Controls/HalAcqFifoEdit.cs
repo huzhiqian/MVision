@@ -50,7 +50,7 @@ namespace Halcon.MVision.Controls
                     cmb_CameraList.Text = interface_type + subject.GigEAccess.DeviceName;
                     cmb_ColorSpace.Text = subject.OpenInfo.ColorSpace.S;
                     SetSubject();
-               
+
                 }
             }
         }
@@ -110,8 +110,16 @@ namespace Halcon.MVision.Controls
             HTuple hv_infomation;
             HTuple hv_InfoList;
 
-            //获取GigE接口的相机信息
-            HOperatorSet.InfoFramegrabber(new HTuple("GigEVision2"), new HTuple("info_boards"), out hv_infomation, out hv_InfoList);
+            try
+            {
+                //获取GigE接口的相机信息
+                HOperatorSet.InfoFramegrabber(new HTuple("GigEVision2"), new HTuple("info_boards"), out hv_infomation, out hv_InfoList);
+            }
+            finally
+            {
+                camList.Clear();
+            }
+
             if (hv_InfoList.SArr.Count() == 0)
                 return camList;
             else
@@ -277,7 +285,7 @@ namespace Halcon.MVision.Controls
             SetGigEInfo();
             if (subject.OutputImage != null)
             {
-                DisplayImage(subject.OutputImage);
+                DisplayImage(hWindowControl1, subject.OutputImage);
             }
         }
 
@@ -477,27 +485,43 @@ namespace Halcon.MVision.Controls
 
         #endregion
 
- 
+        private delegate void DisplayImageCallBack(HWindowControl hCtrl, IHalImage image);
+        private object displayLock = new object();
+        private int ticketNum = System.Environment.TickCount;
         /// <summary>
         /// 显示图像
         /// </summary>
-        private void DisplayImage(IHalImage image)
+        private void DisplayImage(HWindowControl hCtrl, IHalImage image)
         {
-                if (hWindowControl1.InvokeRequired)
+
+            if (hCtrl.InvokeRequired)
+            {
+                DisplayImageCallBack a = new DisplayImageCallBack(DisplayImage);
+                hCtrl.Invoke(a, hCtrl, image);
+                return;
+            }
+            else
+            {
+                if (System.Environment.TickCount - ticketNum > 33)
                 {
-                    Action<IHalImage> a = new Action<IHalImage>(DisplayImage);
-                    hWindowControl1.Invoke(a);
-                    return;
+                    ticketNum = System.Environment.TickCount;
+                    try
+                    {
+                        HSystem.SetSystem("flush_graphic", "false");
+                        //hCtrl.HalconWindow.ClearWindow();
+                        //if (image.Width != hCtrl.ImagePart.Width)
+                        //    SetImagePart(hCtrl,0, 0, image.Height, image.Width);
+                        hCtrl.HalconWindow.DispObj(image.SourceImage);
+                        HSystem.SetSystem("flush_graphic", "true");
+
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.ToString());
+                    }
                 }
-                else
-                {
-                    HSystem.SetSystem(new HTuple("flush_graphic"),new HTuple("false"));
-                    hWindowControl1.HalconWindow.ClearWindow();
-                    SetImagePart(0,0, image.Height,image.Width);
-                    hWindowControl1.HalconWindow.DispObj(image.SourceImage);
-                    HSystem.SetSystem(new HTuple("flush_graphic"), new HTuple("true"));
-                  
-                }
+            }
+
         }
 
         /// <summary>
@@ -507,14 +531,14 @@ namespace Halcon.MVision.Controls
         /// <param name="c1">左上角x坐标</param>
         /// <param name="r2">右下角Y坐标</param>
         /// <param name="c2">右下角x坐标</param>
-        private void SetImagePart(int r1, int c1, int r2, int c2)
+        private void SetImagePart(HWindowControl hCtrl, int r1, int c1, int r2, int c2)
         {
-            System.Drawing.Rectangle rect = hWindowControl1.ImagePart;
+            System.Drawing.Rectangle rect = hCtrl.ImagePart;
             rect.X = c1;
             rect.Y = r1;
             rect.Height = r2;
             rect.Width = c2;
-            hWindowControl1.ImagePart = rect;
+            hCtrl.ImagePart = rect;
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -586,7 +610,7 @@ namespace Halcon.MVision.Controls
                 if (MessageBox.Show("是否保存当前相机设置？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                     == DialogResult.OK)
                 {
-                    SaveSubjectToFile(); 
+                    SaveSubjectToFile();
                 }
                 //关闭相机
                 if (subject.AcqStateInfo.IsCameraLinked)
@@ -616,13 +640,13 @@ namespace Halcon.MVision.Controls
                         if (openFileDialog.SafeFileNames[0].EndsWith(".hal") ||
                             openFileDialog.SafeFileNames[0].EndsWith(".HAL"))
                         {
-                            string fileName =openFileDialog.FileNames[0];
-                          var  acqObj = HalSerializer.LoadObjectFormFile(fileName) as HalAcqFifoTool;
+                            string fileName = openFileDialog.FileNames[0];
+                            var acqObj = HalSerializer.LoadObjectFormFile(fileName) as HalAcqFifoTool;
                             Subject = acqObj;
                         }
                         else
                         {
-                            MessageBox.Show("选择的文件不是.hal格式的！","提示");
+                            MessageBox.Show("选择的文件不是.hal格式的！", "提示");
                         }
                     }
                     else
@@ -636,26 +660,32 @@ namespace Halcon.MVision.Controls
                 openFileDialog.Dispose();
                 openFileDialog = null;
             }
-          
+
         }
 
 
         private void btn_Run_Click(object sender, EventArgs e)
         {
             if (subject != null)
+            {
+                this.Cursor = Cursors.WaitCursor;
                 subject.Run();
+                this.Cursor = Cursors.Default;
+            }
+
         }
 
-        private void GrabImageComplete(object sender,HalCompleteEventArgs e)
+        private void GrabImageComplete(object sender, HalCompleteEventArgs e)
         {
-            DisplayImage(e.GrabImage);
+            //DisplayImage(hWindowControl1, e.GrabImage.SourceImage);
+            DisplayImage(hWindowControl1, e.GrabImage);
         }
 
         protected virtual void Repaint()
         {
             if (subject != null && subject.OutputImage != null)
             {
-                DisplayImage(subject.OutputImage);
+                DisplayImage(hWindowControl1, subject.OutputImage);
             }
         }
 

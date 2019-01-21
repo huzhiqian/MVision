@@ -34,7 +34,7 @@ namespace Halcon.MVision
         private int m_width = 0;
         private int m_height = 0;
 
-        private HObject sourceImage;    //相机源图像
+        private HObject sourceImage=null;    //相机源图像
         private Hashtable myGraphicTable = new Hashtable(10, 0.2f);  //存储Graphics对象的哈希表
 
         [NonSerialized]
@@ -46,8 +46,9 @@ namespace Halcon.MVision
         /// HalImage8Grey构造函数
         /// </summary>
         /// <param name="srcImage">相机输出源图像</param>
-        public HalImage8Grey(HObject srcImage)
+        public HalImage8Grey(ref HObject srcImage)
         {
+            HOperatorSet.GenEmptyObj(out sourceImage);
             sourceImage = srcImage;
 
         }
@@ -58,6 +59,7 @@ namespace Halcon.MVision
         /// <param name="srcImage">windows位图</param>
         public HalImage8Grey(Bitmap srcImage)
         {
+            HOperatorSet.GenEmptyObj(out sourceImage);
             BitmapToHObjectImage(srcImage);
         }
 
@@ -67,6 +69,7 @@ namespace Halcon.MVision
         /// <param name="other">其它HalImage8Grey对象</param>
         public HalImage8Grey(HalImage8Grey other)
         {
+            HOperatorSet.GenEmptyObj(out sourceImage);
             sourceImage = other.SourceImage;
             myGraphicTable = other.GraphicContext;
         }

@@ -48,7 +48,7 @@ namespace HalconCameraDLLTest
             try
             {
                 string fileName = @"C:\Users\Administrator\Desktop\AcqTest.hal";
-                halAcqFifo = Halcon.MVision.HalSerializer.LoadObjectFormFile(fileName) as HalAcqFifoTool;
+                //halAcqFifo = Halcon.MVision.HalSerializer.LoadObjectFormFile(fileName) as HalAcqFifoTool;
             }
             finally { }
 

@@ -49,6 +49,7 @@ namespace Halcon.MVision
         [NonSerialized]
         private bool isRealDisplay = false; //开启实时显示的标志
         private IHalImage m_outputImage;
+
         #region 构造函数
 
         /// <summary>
@@ -90,6 +91,7 @@ namespace Halcon.MVision
                 //初始化Operator
                 _operator = new HalAcqOperator(ref __halAcqHandle);
                 halGigEAccess = new CHalGigEAccess(ref __halAcqHandle);
+
             }
 
         }
@@ -210,6 +212,7 @@ namespace Halcon.MVision
             if (isRealDisplay) return;
             int ticketCount = System.Environment.TickCount;
             HObject ho_OutputImage;
+            HOperatorSet.GenEmptyObj(out ho_OutputImage);
             if (asyncGrab)
             {
                 ho_OutputImage = SafeAsyncGrabImage();
@@ -219,10 +222,14 @@ namespace Halcon.MVision
                 ho_OutputImage = SafeSyncGrabImage();
             }
             int triggerNumber = System.Environment.TickCount;
-            m_outputImage = new HalImage8Grey(ho_OutputImage);
+            m_outputImage = new HalImage8Grey(ref ho_OutputImage);
             HalCompleteEventArgs eventArgs = new HalCompleteEventArgs(ticketCount, triggerNumber, m_outputImage);
             if (Complete != null)
+            {
                 Complete(this, eventArgs);
+               
+            }
+               
 
         }
 
@@ -231,36 +238,14 @@ namespace Halcon.MVision
             if (isRealDisplay == false)
             {
                 isRealDisplay = true;
+
+                System.Threading.Thread.Sleep(100);
                 UseAsyncGrab = true;    //启用异步抓帧
-                System.Threading.Tasks.Task displayTask =
-                    new System.Threading.Tasks.Task(new Action(() =>
-                    {
-                        try
-                        {
-                            while (isRealDisplay)
-                            {
-                                Console.WriteLine("Grab one Image");
-                                int ticketCount = System.Environment.TickCount;
-                                HObject ho_OutputImage;
-
-                                ho_OutputImage = SafeAsyncGrabImage();
-                                m_outputImage = new HalImage8Grey(ho_OutputImage);
-                                int triggerNumber = System.Environment.TickCount;
-                                HalCompleteEventArgs eventArgs = new HalCompleteEventArgs(ticketCount, triggerNumber, m_outputImage);
-                                if (Complete != null)
-                                    Complete(this, eventArgs);
-                          
-
-                            }
-                        }
-                        catch (HalconException ex)
-                        {
-                            isRealDisplay = false;
-                            Console.WriteLine(ex.ToString());
-                            //throw ex;
-                        }
-                    }));
-                displayTask.Start();
+                System.Threading.Tasks.Task disTask = new System.Threading.Tasks.Task(new Action(() =>
+                 {
+                     LiveDisplayGrab();
+                 }));
+                disTask.Start();
             }
 
         }
@@ -270,12 +255,41 @@ namespace Halcon.MVision
             if (isRealDisplay)
             {
                 isRealDisplay = false;
+                System.Threading.Thread.Sleep(100);
                 UseAsyncGrab = false;
             }
         }
         #endregion
 
         #region 私有方法
+
+        private void LiveDisplayGrab()
+        {
+            while (isRealDisplay)
+            {
+                try
+                {
+
+                    int ticketCount = System.Environment.TickCount;
+                    HObject ho_OutputImage = null;
+
+                    ho_OutputImage = SafeAsyncGrabImage();
+                   HalImage8Grey image = new HalImage8Grey(ref ho_OutputImage);
+                   int triggerNumber = System.Environment.TickCount;
+                    HalCompleteEventArgs eventArgs = new HalCompleteEventArgs(ticketCount, triggerNumber, image);
+                    Complete?.Invoke(this, eventArgs);
+                
+                   // Console.WriteLine("Grab one Image");
+                }
+                catch (Exception ex)
+                {
+                    isRealDisplay = false;
+
+                    Console.WriteLine(ex.ToString());
+                    //throw ex;
+                }
+            }
+        }
 
         private bool OpenCamera(ref IHalAcqOpenInfo openInfo)
         {
@@ -362,7 +376,7 @@ namespace Halcon.MVision
             {
                 try
                 {
-                    HOperatorSet.GrabImageStart(__halAcqHandle, new HTuple(-1));
+                    HOperatorSet.GrabImageStart(__halAcqHandle, -1);
                     asyncGrab = state;
                 }
                 catch (HalconException e)
@@ -380,14 +394,7 @@ namespace Halcon.MVision
             HObject ho_image;
             lock (syncGrabLocker)
             {
-                try
-                {
                     HOperatorSet.GrabImage(out ho_image, __halAcqHandle);//同步方式抓取一帧图像
-                }
-                catch (HalconException e)
-                {
-                    throw e;
-                }
             }
             return ho_image;
         }
@@ -395,17 +402,10 @@ namespace Halcon.MVision
         //private object asyncGrabLocker = new object(); //异步抓帧锁
         private HObject SafeAsyncGrabImage()
         {
-            HObject ho_Image;
+            HObject ho_Image = null; ;
             // lock (asyncGrabLocker)
             // {
-            try
-            {
                 HOperatorSet.GrabImageAsync(out ho_Image, __halAcqHandle, -1);//异步方式抓取一帧图像
-            }
-            catch (HalconException e)
-            {
-                throw e;
-            }
             //}
             return ho_Image;
         }
@@ -455,5 +455,5 @@ namespace Halcon.MVision
 
     }
 
-    public delegate void HalCompleteEventHandler(object sender, HalCompleteEventArgs e);
+     public delegate void HalCompleteEventHandler(object sender, HalCompleteEventArgs e);
 }
