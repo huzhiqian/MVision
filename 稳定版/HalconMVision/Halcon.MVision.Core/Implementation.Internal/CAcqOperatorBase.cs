@@ -56,10 +56,12 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHanlde.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-            HTuple param = new HTuple();
+     
             try
             {
+                HTuple param;
                 HOperatorSet.GetFramegrabberParam(deviceHanlde, paramName, out param);
+                return param;
             }
             catch (HalconException e)
             {
@@ -67,7 +69,6 @@ namespace Halcon.MVision.Implementation.Internal
                 if ((int)hv_HalconError < 0)
                     throw e;
             }
-            return param;
         }
 
         /// <summary>
@@ -81,10 +82,12 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空！");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-            HTuple param = new HTuple();
+         
             try
             {
+                HTuple param;
                 HOperatorSet.GetFramegrabberParam(deviceHandle, new HTuple(paramName.S + "_range"), out param);
+                return param;
             }
             catch (HalconException e)
             {
@@ -92,7 +95,6 @@ namespace Halcon.MVision.Implementation.Internal
                 if ((int)hv_HalconError < 0)
                     throw e;
             }
-            return param;
         }
 
         /// <summary>
@@ -106,7 +108,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-            HTuple param = new HTuple();
+       
             try
             {
                 HTuple tempParam;
@@ -114,16 +116,13 @@ namespace Halcon.MVision.Implementation.Internal
                 switch (tempParam.Type)
                 {
                     case HTupleType.INTEGER:
-                        param = tempParam.IArr[1];
-                        break;
+                        return tempParam.IArr[1];
                     case HTupleType.LONG:
-                        param = tempParam.LArr[1];
-                        break;
+                        return tempParam.LArr[1];
                     case HTupleType.DOUBLE:
-                        param = tempParam.DArr[1];
-                        break;
+                        return tempParam.DArr[1];
                     default:
-                        break;
+                        return null;
                 }
             }
             catch (HalconException e)
@@ -132,7 +131,6 @@ namespace Halcon.MVision.Implementation.Internal
                 if ((int)hv_HalconError < 0)
                     throw e;
             }
-            return param;
         }
 
         /// <summary>
@@ -146,7 +144,7 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空");
             HTuple hv_HalconError;
             hv_HalconError = 2;
-            HTuple param = new HTuple();
+           
             try
             {
                 HTuple tempParam;
@@ -154,16 +152,13 @@ namespace Halcon.MVision.Implementation.Internal
                 switch (tempParam.Type)
                 {
                     case HTupleType.INTEGER:
-                        param = tempParam.IArr[0];
-                        break;
+                        return tempParam.IArr[0];
                     case HTupleType.LONG:
-                        param = tempParam.LArr[0];
-                        break;
+                        return tempParam.LArr[0];
                     case HTupleType.DOUBLE:
-                        param = tempParam.DArr[0];
-                        break;
+                        return tempParam.DArr[0];
                     default:
-                        break;
+                        return null;
                 }
             }
             catch (HalconException e)
@@ -172,7 +167,6 @@ namespace Halcon.MVision.Implementation.Internal
                 if ((int)hv_HalconError < 0)
                     throw e;
             }
-            return param;
         }
 
         /// <summary>
@@ -186,11 +180,12 @@ namespace Halcon.MVision.Implementation.Internal
             if (deviceHandle.TupleEqual(null)) throw new NullReferenceException("设备句柄为空"); 
             HTuple hv_HalconError;
             hv_HalconError = 2;
-            HTuple param = new HTuple();
+            HTuple param;
             
             try
             {
                 HOperatorSet.GetFramegrabberParam(deviceHandle, new HTuple(paramName.S + "_values"), out param);
+                return param;
             }
             catch (HalconException e)
             {
@@ -198,7 +193,6 @@ namespace Halcon.MVision.Implementation.Internal
                 if ((int)hv_HalconError < 0)
                     throw e;
             }
-            return param;
         }
 
         /// <summary>

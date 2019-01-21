@@ -129,7 +129,6 @@ namespace Halcon.MVision.Controls
                     string result = GetCameraBoardInfo(item, "device");
                     if (result != string.Empty)
                         camList.Add(result);
-                    break;
                 }
                 return camList;
             }
