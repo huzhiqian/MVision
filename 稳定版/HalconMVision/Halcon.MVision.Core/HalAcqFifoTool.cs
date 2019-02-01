@@ -385,7 +385,11 @@ namespace Halcon.MVision
                 }
             }
             else
+            {
+            //停异抓帧
                 asyncGrab = state;
+                SafeSyncGrabImage();//同抓一帧
+                }
         }
 
         private object syncGrabLocker = new object();//同步取像锁

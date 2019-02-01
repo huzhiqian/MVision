@@ -203,7 +203,9 @@ namespace Halcon.MVision.Implementation.Internal
         #endregion
 
         #region 私有方法
-
+         ///<summary>
+         /// 解析数据
+         ///</summary>
         private void ParsedString()
         {
             if (__acqHandle == null)

@@ -234,6 +234,11 @@ namespace Halcon.MVision
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
+            GetObjectData(info,context);
+        }
+
+        protected virtual void GetObjectData(SerializationInfo info, SteamingContext context)
+        {
             info.AddValue("name",name,typeof(HTuple));
             info.AddValue("horizontalResolution", horizontalResolution, typeof(HTuple));
             info.AddValue("verticalResolution", verticalResolution, typeof(HTuple));
@@ -251,7 +256,6 @@ namespace Halcon.MVision
             info.AddValue("port", port, typeof(HTuple));
             info.AddValue("lineIn", lineIn, typeof(HTuple));
         }
-
         #endregion
 
         #region 公共方法
