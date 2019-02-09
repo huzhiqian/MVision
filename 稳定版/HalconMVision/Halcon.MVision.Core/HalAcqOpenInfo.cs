@@ -232,12 +232,12 @@ namespace Halcon.MVision
             set { lineIn = value; }
         }
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+         void ISerializable.GetObjectData(SerializationInfo info, StreamingContext context)
         {
             GetObjectData(info,context);
         }
 
-        protected virtual void GetObjectData(SerializationInfo info, SteamingContext context)
+        protected virtual void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("name",name,typeof(HTuple));
             info.AddValue("horizontalResolution", horizontalResolution, typeof(HTuple));

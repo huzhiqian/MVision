@@ -212,10 +212,9 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_halconError = e.GetErrorCode();
-                if ((int)hv_halconError < 0)
-                    throw e;
+                throw new HalconException(hv_halconError, e.GetErrorMessage());
             }
-            return false;
+
         }
 
         /// <summary>
@@ -238,10 +237,8 @@ namespace Halcon.MVision.Implementation.Internal
             catch (HalconException e)
             {
                 hv_HalconError = e.GetErrorCode();
-                if ((int)hv_HalconError < 0)
-                    throw e;
+                throw new HalconException(hv_HalconError, e.GetErrorMessage());
             }
-            return false;
         }
 
         #endregion
