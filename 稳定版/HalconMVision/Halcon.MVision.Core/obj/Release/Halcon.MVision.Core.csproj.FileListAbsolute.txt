@@ -36,3 +36,12 @@ I:\项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Cor
 I:\项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.dll
 I:\项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.pdb
 I:\项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.csprojAssemblyReference.cache
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.Core.dll
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.Core.pdb
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.dll
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\bin\Release\Halcon.MVision.pdb
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.csprojAssemblyReference.cache
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.csproj.CoreCompileInputs.cache
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.csproj.CopyComplete
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.dll
+I:\项目\创驰项目\创驰2019年项目\MVision\稳定版\HalconMVision\Halcon.MVision.Core\obj\Release\Halcon.MVision.Core.pdb

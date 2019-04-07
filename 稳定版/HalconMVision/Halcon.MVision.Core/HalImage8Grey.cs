@@ -34,7 +34,7 @@ namespace Halcon.MVision
         private int m_width = 0;
         private int m_height = 0;
 
-        private HObject sourceImage=null;    //相机源图像
+        private HObject sourceImage = null;    //相机源图像
         private Hashtable myGraphicTable = new Hashtable(10, 0.2f);  //存储Graphics对象的哈希表
 
         [NonSerialized]
@@ -116,6 +116,28 @@ namespace Halcon.MVision
         {
             get { return myGraphicTable; }
         }
+
+        /// <summary>
+        /// 获取原图像是否为空
+        /// </summary>
+        public bool IsSourceImageEmpty
+        {
+            get
+            {
+                HObject hobj;
+                HOperatorSet.GenEmptyObj(out hobj);
+              int val=  sourceImage.TestEqualObj(hobj);
+                if (val == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+        }
         #endregion
 
         #region 公共方法
@@ -134,7 +156,7 @@ namespace Halcon.MVision
             HTuple hv_HalconError;
             try
             {
-                HOperatorSet.ZoomImageSize(sourceImage,out ho_Image,new HTuple(width),new HTuple(height),new HTuple("bilinear"));
+                HOperatorSet.ZoomImageSize(sourceImage, out ho_Image, new HTuple(width), new HTuple(height), new HTuple("bilinear"));
                 return (IHalImage)ho_Image;
             }
             catch (HalconException e)
@@ -185,9 +207,9 @@ namespace Halcon.MVision
         /// </summary>
         /// <param name="name">图标名称</param>
         /// <param name="iconic">图标对象</param>
-        public void AddIconic(string name,HObject iconic)
+        public void AddIconic(string name, HObject iconic)
         {
-            AddValueToHashTable(name,iconic);
+            AddValueToHashTable(name, iconic);
         }
 
         #endregion
@@ -221,9 +243,9 @@ namespace Halcon.MVision
         /// </summary>
         private void GetImageWidth()
         {
-            if (!sourceImage.Equals(null))
+            if (!IsSourceImageEmpty)
             {
-                if (m_width != 0)
+                if (m_width == 0)
                 {
                     HTuple hv_HalconError;
                     HTuple hv_imagewidth, hv_imageheight;
@@ -241,10 +263,10 @@ namespace Halcon.MVision
                     }
                 }
             }
-            else
-            {
-                throw new NullReferenceException("源图像为空，无法获取图像宽度信息！");
-            }
+            //else
+            //{
+            //    throw new NullReferenceException("源图像为空，无法获取图像宽度信息！");
+            //}
         }
         /// <summary>
         /// 获取图像的高度
