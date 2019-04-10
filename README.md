@@ -16,3 +16,5 @@ MVision是用Halcon的封装的软件。原本的目的是为了以后用halcon�
 
 #`修改说明`
 
+
+2019-4-9: 修复了稳定版在没有相机连接的情况下，打开AcqFifoEdit出错的Bug
