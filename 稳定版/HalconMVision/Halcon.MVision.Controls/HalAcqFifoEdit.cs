@@ -107,8 +107,8 @@ namespace Halcon.MVision.Controls
         private List<string> GetSysCameras()
         {
             List<string> camList = new List<string>();
-            HTuple hv_infomation;
-            HTuple hv_InfoList;
+            HTuple hv_infomation= new HTuple();
+            HTuple hv_InfoList= new HTuple();
 
             try
             {
@@ -120,7 +120,7 @@ namespace Halcon.MVision.Controls
                 camList.Clear();
             }
 
-            if (hv_InfoList.SArr.Count() == 0)
+            if ( hv_InfoList.Length==0)
                 return camList;
             else
             {
